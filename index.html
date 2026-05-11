@@ -2,259 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>TTA Group Adventure Agency | Global Travel DMC</title>
-    
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTA Group | Global B2B Ground Handler & DMC</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
-        :root {
-            --bg: #000000;
-            --card-bg: #0a0a0a;
-            --text-main: #ffffff;
-            --text-dim: #888888;
-            --accent: #3b82f6; 
-            --border: rgba(255, 255, 255, 0.08);
-            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
+        :root { --bg: #000; --card: #0a0a0a; --accent: #3b82f6; --text: #fff; --dim: #888; --border: rgba(255,255,255,0.08); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); overflow-x: hidden; scroll-behavior: smooth; }
-
-        nav { padding: 30px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-        .logo { font-weight: 800; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; }
-
-        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; }
-        .hero h1 { font-size: clamp(3.5rem, 10vw, 7.5rem); font-weight: 800; line-height: 0.9; letter-spacing: -4px; margin-bottom: 30px; text-transform: uppercase; }
-
-        .section-label { padding: 80px 8% 40px; font-size: 0.7rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; }
-
-        /* Bento Grid */
-        .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 8% 50px; }
-        .bento-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 40px; transition: var(--transition); }
-        .card-2 { grid-column: span 2; }
-        .bento-card h2 { font-size: 0.7rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
-        .bento-card p { font-size: 1.1rem; line-height: 1.6; color: var(--text-dim); }
-
-        /* Destination Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1px; background: var(--border); margin: 0 8% 40px; }
-        .card { background: var(--bg); height: 450px; position: relative; overflow: hidden; cursor: pointer; transition: var(--transition); }
-        .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(100%); transition: var(--transition); }
-        .card:hover img { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
-        .card-info { position: absolute; bottom: 30px; left: 30px; z-index: 2; }
-        .card-info h3 { font-size: 1.5rem; text-transform: uppercase; font-weight: 800; }
-
-        /* Full Legal Section */
-        .legal-wrapper { padding: 0 8% 100px; }
-        .legal-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 32px; padding: 60px; }
-        .legal-box h2 { font-size: 2rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-        .term-item { margin-bottom: 40px; }
-        .term-item h4 { color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-        .term-item p { color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; }
-
-        /* Contact Section */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 0 8% 120px; }
-        .contact-item { border-bottom: 1px solid var(--border); padding-bottom: 30px; margin-bottom: 30px; }
-        .contact-item span { display: block; font-size: 0.7rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-        .contact-item a { font-size: 1.6rem; color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .contact-item a:hover { color: var(--accent); }
-
-        input, select, textarea { background: transparent; border: none; border-bottom: 1px solid #333; padding: 20px 0; color: white; width: 100%; outline: none; margin-bottom: 30px; font-size: 1rem; transition: 0.3s; }
-        input:focus { border-color: var(--accent); }
-        .btn-main { background: #fff; color: #000; padding: 25px; font-weight: 800; text-transform: uppercase; border: none; cursor: pointer; width: 100%; transition: 0.4s; letter-spacing: 2px; }
-        .btn-main:hover { background: var(--accent); color: #fff; }
-
-        .wa-float { position: fixed; bottom: 40px; right: 40px; background: white; color: black; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-
-        @media (max-width: 900px) { 
-            .profile-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; } 
-            .card-2 { grid-column: span 1; }
-            .legal-box { padding: 30px; }
-        }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+        nav { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); }
+        .logo { font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 1rem; color: #fff; text-decoration: none; }
+        .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%); }
+        .hero span { color: var(--accent); font-weight: 800; letter-spacing: 6px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 25px; display: block; }
+        .hero h1 { font-size: clamp(3.5rem, 12vw, 8.5rem); font-weight: 800; line-height: 0.85; letter-spacing: -5px; text-transform: uppercase; }
+        .section-label { padding: 120px 8% 40px; font-size: 0.75rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; border-top: 1px solid var(--border); margin-top: 80px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: var(--border); margin: 0 8%; border: 1px solid var(--border); }
+        .card { background: var(--bg); height: 480px; position: relative; overflow: hidden; cursor: pointer; transition: 0.4s; }
+        .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1); filter: grayscale(100%); }
+        .card:hover img { opacity: 0.9; filter: grayscale(0%); transform: scale(1.1); }
+        .card-info { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
+        .card-info h3 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; letter-spacing: -1px; }
+        .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
+        .legal-container { padding: 40px 8% 120px; }
+        .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; background: var(--card); padding: 60px; border-radius: 30px; border: 1px solid var(--border); }
+        .term-item h4 { color: var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
+        .term-item p { color: var(--dim); font-size: 0.85rem; line-height: 1.7; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #fff; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; transition: 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        footer { padding: 60px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--dim); font-size: 0.8rem; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-
-    <nav><div class="logo">TTA Group <span>Adventure Agency</span></div></nav>
-
+    <nav><a href="#" class="logo">TTA GROUP</a></nav>
     <section class="hero">
-        <div class="breadcrumb" style="color: var(--accent); letter-spacing: 4px; font-weight: 800; font-size: 0.7rem; margin-bottom: 20px;">B2B DESTINATION MANAGEMENT</div>
-        <h1>GROUND<br>EXCELLENCE.</h1>
+        <span>The Gold Standard in Ground Operations</span>
+        <h1>GLOBAL<br>PRECISION.</h1>
     </section>
-
-    <div class="section-label">DMC Profile</div>
-    <section class="profile-grid">
-        <div class="bento-card card-2">
-            <h2>Our Core Identity</h2>
-            <p><strong>TTA Group</strong> operates as your dedicated ground partner. We handle the complexities of local logistics, hotel procurement, and safety protocols so your agency can focus on sales and client relationships.</p>
-        </div>
-        <div class="bento-card">
-            <h2>B2B Specialist</h2>
-            <p>Our infrastructure is built for scale, providing reliable execution for travel operators across South Asia, Southeast Asia, and Europe.</p>
-        </div>
-    </section>
-
     <div id="destination-sections"></div>
-
-    <div class="section-label">Terms & Conditions</div>
-    <section class="legal-wrapper">
-        <div class="legal-box">
-            <p style="color: var(--accent); margin-bottom: 40px; font-weight: 800;">OFFICIAL DMC POLICY | LAST UPDATED: NOV 5, 2025</p>
-            
-            <div class="term-item">
-                <h4>1. Booking & Payments</h4>
-                <p>All bookings are subject to ground availability. Prices are quoted based on current tax regimes and include all applicable local levies. A booking is considered legally confirmed only upon successful receipt of payment and the issuance of a TTA Group confirmation voucher.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>2. Pricing Inclusions</h4>
-                <p>Inclusions are strictly limited to those outlined in the final approved itinerary. Standard inclusions typically cover accommodation, designated transfers, specified sightseeing, and meals as noted (B/L/D). Any items not explicitly listed are considered exclusions.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>3. Cancellations & Refunds</h4>
-                <p>Our cancellation windows are: 60-30 days prior (Full Refund), 30-15 days prior (50% Deduction), and less than 15 days (No Refund). Please note that transaction fees and non-refundable supplier deposits (e.g., flight tickets) are non-recoverable.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>4. Amendments by Guest</h4>
-                <p>Any changes to dates, passenger names, or hotel categories after confirmation are subject to supplier availability and may incur administrative amendment fees alongside price differences.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>5. Itinerary Modifications</h4>
-                <p>TTA Group reserves the right to modify routes or timings due to local weather, road closures, or safety concerns. In such events, we will strive to provide a comparable alternative of equal value.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>6. Health & Fitness</h4>
-                <p>Adventure travel involves varying levels of physical exertion. Guests must ensure they are medically fit for the chosen itinerary. TTA Group is not liable for health issues arising from undisclosed pre-existing conditions.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>7. Documentation</h4>
-                <p>Maintaining valid passports (min. 6 months validity), visas, and health certificates is the sole responsibility of the guest. TTA Group will assist with invitation letters where applicable but is not liable for visa rejections.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>8. Liability Clause</h4>
-                <p><strong>TTA Group</strong> acts as an intermediary between guests and service providers. We are not liable for injury, damage, loss, or delay caused by third-party suppliers, strikes, civil unrest, or acts of God (Force Majeure).</p>
-            </div>
-
-            <div class="term-item">
-                <h4>9. Travel Insurance</h4>
-                <p>We mandate that all travelers possess comprehensive travel insurance. This should cover medical emergencies, personal accident, and trip cancellation.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>10. Behavioral Conduct</h4>
-                <p>We uphold a zero-tolerance policy for illegal activities or disruptive behavior. TTA Group reserves the right to terminate services without refund if a guest's conduct poses a risk to themselves or others.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>11. Marketing & Media</h4>
-                <p>We may document tours via photo or video for marketing purposes. Guests who wish to opt-out must notify the ground lead at the start of the journey.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>12. Snowfall & Weather Contingency</h4>
-                <p>In high-altitude regions (e.g., Manali, Kazakhstan, Georgia), vehicle movement is strictly governed by local police and weather authorities. If a standard vehicle cannot proceed, 4x4 hire or alternative transport costs are to be borne by the guest/partner.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>13. Complaints</h4>
-                <p>Any service discrepancies must be reported immediately to our 24/7 ground support to allow for real-time rectification. Post-tour claims may not be entertained if not reported during the trip.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>14. Data Privacy</h4>
-                <p>Client data is used solely for booking purposes (hotels, permits, flights). We comply with global data protection standards and do not share information with external marketing firms.</p>
-            </div>
-
-            <div class="term-item">
-                <h4>15. Legal Jurisdiction</h4>
-                <p>These terms are governed by Indian law. All disputes are subject to the exclusive jurisdiction of the courts where TTA Group is registered.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-label">Contact TTA Group</div>
-    <section class="contact-grid">
-        <div class="contact-info">
-            <div class="contact-item"><span>Ground Support (WA)</span><a href="https://wa.me/919028227102">+91 9028227102</a></div>
-            <div class="contact-item"><span>Director Desk</span><a href="mailto:swapnil@ttagroups.net">swapnil@ttagroups.net</a></div>
-            <div class="contact-item"><span>India Operations</span><a href="mailto:salesindia@ttagroups.net">salesindia@ttagroups.net</a></div>
-        </div>
-        <form action="https://formspree.io/f/xbdlnwyw" method="POST">
-            <input type="text" name="name" placeholder="FULL NAME" required>
-            <input type="email" name="email" placeholder="OFFICIAL EMAIL" required>
-            <select name="destination" id="dest-select" required>
-                <option value="" disabled selected>SELECT DESTINATION</option>
-            </select>
-            <button type="submit" class="btn-main">Enquire Now</button>
-        </form>
-    </section>
-
-    <a href="https://wa.me/919028227102" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
+    <div class="section-label">02. B2B Terms & Conditions</div>
+    <div class="legal-container">
+        <section class="legal-grid">
+            <div class="term-item"><h4>01. Booking Confirmation</h4><p>Service confirmation is subject to advance payment and issuance of TTA Group digital vouchers. No verbal confirmations are binding.</p></div>
+            <div class="term-item"><h4>02. Pricing & Currency</h4><p>All rates are Nett B2B and quoted in USD or Local Currency. Rates are subject to change in case of government tax revisions.</p></div>
+            <div class="term-item"><h4>03. Cancellation Policy</h4><p>30-60 days: 100% Refund. 15-30 days: 50% Refund. Less than 15 days or No-Show: 100% Cancellation charges apply.</p></div>
+            <div class="term-item"><h4>04. Hotel Occupancy</h4><p>Standard check-in 14:00. Check-out 12:00. Requests for early/late check-out are subject to availability and specific hotel surcharges.</p></div>
+            <div class="term-item"><h4>05. Ground Transportation</h4><p>Vehicles provided for point-to-point transfers and listed sightseeing. Any additional hours or route deviations are payable directly to the driver.</p></div>
+            <div class="term-item"><h4>06. Health & Insurance</h4><p>TTA Group does not provide personal travel insurance. It is mandatory for guests to have valid medical and travel insurance for the duration of the trip.</p></div>
+            <div class="term-item"><h4>07. Itinerary Variations</h4><p>Operations reserve the right to alter routes due to roadblocks, weather, or security alerts. TTA Group is not liable for missed sightseeing due to these factors.</p></div>
+            <div class="term-item"><h4>08. Force Majeure</h4><p>TTA Group is not liable for service disruptions caused by acts of God, strikes, pandemics, or civil unrest.</p></div>
+            <div class="term-item"><h4>09. No-Show & Vouchers</h4><p>Vouchers must be presented (digital/physical) at all service points. No-show at pickup locations will result in service forfeiture without refund.</p></div>
+            <div class="term-item"><h4>10. Child & Senior Policy</h4><p>Child rates apply for ages 2-11. Infants under 2 are free for most services but may incur costs for flights or specific activities.</p></div>
+            <div class="term-item"><h4>11. Specific Requirements</h4><p>Special dietary needs or physical assistance requirements must be shared at least 7 days prior to arrival.</p></div>
+            <div class="term-item"><h4>12. Snowfall & 4x4 Policy</h4><p>In regions prone to snow (Georgia, Russia, Kazakhstan, etc.), 4x4 vehicle upgrades required due to weather are at the client's expense.</p></div>
+            <div class="term-item"><h4>13. Documentation</h4><p>Visa and passport validity are the sole responsibility of the traveler. TTA Group is not liable for entry refusals.</p></div>
+            <div class="term-item"><h4>14. Conduct & Ethics</h4><p>TTA Group maintains a zero-tolerance policy for harassment. Services will be terminated if travelers engage in illegal or abusive behavior.</p></div>
+            <div class="term-item"><h4>15. Dispute Resolution</h4><p>All legal disputes are subject to the jurisdiction of the registered headquarters of TTA Group.</p></div>
+        </section>
+    </div>
+    <footer>© 2026 TTA GROUP | DMC & GROUND HANDLING SPECIALISTS</footer>
+    <a href="https://wa.me/919028227102" class="wa-float"><i class="fab fa-whatsapp"></i></a>
     <script>
-        // FULL RESTORED DESTINATION LIST
         const regions = [
-            { title: "Caucasus & Central Asia", destinations: [
-                { name: "Azerbaijan", id: "azerbaijan", img: "images/azerbaijan.jpg" },
-                { name: "Georgia", id: "georgia", img: "images/georgia.jpg" },
-                { name: "Kazakhstan", id: "kazakhstan", img: "images/kazakhstan.jpg" },
-                { name: "Uzbekistan", id: "uzbekistan", img: "images/uzbekistan.jpg" },
-                { name: "Russia", id: "russia", img: "images/russia.jpg" }
-            ]},
-            { title: "Southeast Asia", destinations: [
-                { name: "Bali", id: "bali", img: "images/bali.jpg" },
-                { name: "Thailand", id: "thailand", img: "images/thailand.jpg" },
-                { name: "Vietnam", id: "vietnam", img: "images/vietnam.jpg" },
-                { name: "Singapore", id: "singapore", img: "images/singapore.jpg" },
-                { name: "Malaysia", id: "malaysia", img: "images/malaysia.jpg" },
-                { name: "Philippines", id: "philippines", img: "images/philippines.jpg" }
-            ]},
-            { title: "Islands & South Asia", destinations: [
-                { name: "Seychelles", id: "seychelles", img: "images/seychelles.jpg" },
-                { name: "Maldives", id: "maldives", img: "images/maldives.jpg" },
-                { name: "Sri Lanka", id: "srilanka", img: "images/srilanka.jpg" },
-                { name: "Mauritius", id: "mauritius", img: "images/mauritius.jpg" }
-            ]},
-            { title: "Europe & ME", destinations: [
-                { name: "Turkey", id: "turkey", img: "images/turkey.jpg" },
-                { name: "Italy", id: "italy", img: "images/italy.jpg" },
-                { name: "France", id: "france", img: "images/france.jpg" },
-                { name: "Dubai", id: "dubai", img: "images/dubai.jpg" }
-            ]}
+            { title: "Caucasus & Central Asia", destinations: ["Azerbaijan", "Georgia", "Kazakhstan", "Uzbekistan", "Russia"] },
+            { title: "Southeast Asia", destinations: ["Bali", "Thailand", "Vietnam", "Singapore", "Malaysia", "Philippines"] },
+            { title: "East Asia", destinations: ["China", "Japan", "South Korea"] },
+            { title: "Islands & Africa", destinations: ["Seychelles", "Maldives", "Sri Lanka", "Mauritius", "Egypt", "Kenya"] },
+            { title: "Europe & ME", destinations: ["Turkey", "Italy", "France", "Switzerland", "Netherlands", "Dubai"] }
         ];
-
         const container = document.getElementById('destination-sections');
-        const select = document.getElementById('dest-select');
-
         regions.forEach(region => {
-            const label = document.createElement('div');
-            label.className = 'section-label';
-            label.innerHTML = region.title;
-            container.appendChild(label);
-
-            const grid = document.createElement('div');
-            grid.className = 'grid';
+            container.innerHTML += `<div class="section-label">${region.title}</div>`;
+            let grid = document.createElement('div'); grid.className = 'grid';
             region.destinations.forEach(d => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `<img src="${d.img}" loading="lazy"><div class="card-info"><h3>${d.name}</h3></div>`;
-                
-                // FIXED: This ID is what the destination.html logic uses to pull packages
-                card.onclick = () => window.location.href = `destination.html?id=${d.id}`;
-                
-                grid.appendChild(card);
-                const opt = document.createElement('option');
-                opt.value = d.name;
-                opt.innerText = d.name.toUpperCase();
-                select.appendChild(opt);
+                grid.innerHTML += `<div class="card" onclick="location.href='destination.html?id=${encodeURIComponent(d.toLowerCase())}'">
+                    <img src="images/${d.toLowerCase().replace(/\s/g, '')}.jpg" onerror="this.src='https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800'">
+                    <div class="card-info"><h3>${d}</h3></div>
+                </div>`;
             });
             container.appendChild(grid);
         });
