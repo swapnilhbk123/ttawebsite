@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTA Group Adventure Agency | Global B2B Destination Management</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Syne:wght@400;700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --bg: #050505; --card: #0c0c0c; --accent: #c5a059; --text: #ffffff; --dim: #a0a0a0; --border: rgba(197, 160, 89, 0.15); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; scroll-behavior: smooth; line-height: 1.6; overflow-x: hidden; }
+        
+        /* NAVIGATION */
+        nav { 
+            padding: 30px 8%; display: flex; justify-content: space-between; align-items: center;
+            position: fixed; width: 100%; z-index: 1000; background: rgba(5,5,5,0.95); 
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); 
+        }
+        .logo { font-family: 'Syne'; font-weight: 800; letter-spacing: 3px; color: #fff; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.65rem; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; font-family: 'Syne'; margin-left: 30px; }
+
+        /* HERO SECTION */
+        .hero { 
+            height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; 
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600');
+            background-size: cover; background-position: center;
+        }
+        .hero h1 { font-family: 'Syne'; font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 800; letter-spacing: -4px; line-height: 0.85; margin-bottom: 20px; text-transform: uppercase; }
+        .hero span { color: var(--accent); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; }
+
+        /* CONTENT SECTIONS */
+        .section { padding: 120px 8%; border-bottom: 1px solid var(--border); }
+        .section-tag { color: var(--accent); font-family: 'Syne'; font-weight: 800; letter-spacing: 4px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        h2 { font-family: 'Syne'; text-transform: uppercase; line-height: 1; }
+
+        /* DMC ADVANTAGE GRID */
+        .advantage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px; }
+        .advantage-item h4 { color: var(--accent); font-family: 'Syne'; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
+        .advantage-item p { font-size: 0.9rem; color: var(--dim); }
+
+        /* REGION CARDS */
+        .region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px; }
+        .region-card { height: 450px; position: relative; overflow: hidden; cursor: pointer; border: 1px solid var(--border); }
+        .region-card img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s cubic-bezier(0.2, 1, 0.3, 1); filter: brightness(0.6); }
+        .region-card:hover img { transform: scale(1.1); filter: brightness(0.8); }
+        .region-label { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
+        .region-label h3 { font-family: 'Cormorant Garamond'; font-size: 2.2rem; font-style: italic; color: #fff; margin-bottom: 5px; }
+
+        /* FORM STYLING */
+        .form-container { max-width: 900px; margin: 0 auto; background: var(--card); padding: 60px; border: 1px solid var(--border); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        input, select, textarea { 
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; 
+            padding: 15px 0; color: #fff; font-family: 'Outfit'; outline: none; transition: 0.3s; margin-bottom: 20px; font-size: 0.9rem;
+        }
+        input:focus, textarea:focus, select:focus { border-bottom-color: var(--accent); }
+        .submit-btn { 
+            background: var(--accent); color: #000; border: none; padding: 22px; 
+            font-family: 'Syne'; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; width: 100%; margin-top: 20px; transition: 0.3s;
+        }
+        .submit-btn:hover { background: #fff; }
+
+        /* TERMS & CONDITIONS */
+        .legal-box { columns: 2; column-gap: 80px; margin-top: 50px; }
+        .term-item { break-inside: avoid; margin-bottom: 35px; font-size: 0.85rem; color: var(--dim); text-align: justify; }
+        .term-item h4 { color: var(--accent); font-family: 'Syne'; font-size: 0.7rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* FOOTER & WHATSAPP */
+        .footer { padding: 80px 8%; text-align: center; border-top: 1px solid var(--border); background: #080808; }
+        .footer-logo { font-family: 'Syne'; font-size: 1rem; letter-spacing: 5px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; font-weight: 800; }
+        .footer-contact { color: var(--dim); font-size: 0.95rem; margin-bottom: 40px; }
+        .footer-contact p { margin-bottom: 10px; }
+        
+        .whatsapp-btn { 
+            position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; 
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none;
+        }
+
+        @media (max-width: 1024px) { .legal-box { columns: 1; } #enquiry { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 3.5rem; } }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919028227102" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <nav>
+        <a href="index.html" class="logo">TTA Group Adventure Agency</a>
+        <div class="nav-links">
+            <a href="#profile">Profile</a>
+            <a href="#regions">Network</a>
+            <a href="#enquiry">Partner With Us</a>
+            <a href="#terms">Terms</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span>Strategic Ground Handling</span>
+        <h1>LOCAL EXPERTISE.<br><span style="color:var(--accent)">GLOBAL  REACH.</span></h1>
+    </section>
+
+    <section class="section" id="profile">
+        <span class="section-tag">Destination Management Overview</span>
+        <div style="max-width: 1100px;">
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 30px;">THE DMC<br>ADVANTAGE.</h2>
+            <p style="color: var(--dim); font-size: 1.15rem; margin-bottom: 25px;">
+                <strong style="color:#fff;">TTA Group Adventure Agency</strong> is a professional service firm that functions as a local expert for a specific region. While travel agents focus on selling individual components like flights, a DMC manages the actual execution of the trip on the ground.
+            </p>
+            <p style="color: var(--dim); font-size: 1.15rem;">
+                At TTA Group Adventure Agency, we act as the local office for international travel partners, ensuring that all logistics and services within our destinations are handled reliably and professionally.
+            </p>
+            
+            <div class="advantage-grid">
+                <div class="advantage-item">
+                    <h4>GROUND LOGISTICS</h4>
+                    <p>We coordinate all physical movement, including airport pickups, private vehicle transfers with professional drivers, and inter-city transport.</p>
+                </div>
+                <div class="advantage-item">
+                    <h4>LOCAL PROCUREMENT</h4>
+                    <p>We use our local relationships to vet and book hotels, restaurants, and tour guides, ensuring they meet specific quality standards.</p>
+                </div>
+                <div class="advantage-item">
+                    <h4>PROGRAM IMPLEMENTATION</h4>
+                    <p>We take a general travel concept and turn it into a functional day-by-day schedule, managing everything from entrance fees to group activity timing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="regions">
+        <span class="section-tag">Global Operational Network</span>
+        <h2 style="font-size: 3rem; margin-bottom: 50px;">SELECT A HUB.</h2>
+        <div class="region-grid" id="regionContainer">
+            </div>
+    </section>
+
+    <section class="section" id="enquiry" style="background: #080808;">
+        <span class="section-tag">B2B Collaboration</span>
+        <h2 style="text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 50px;">REGISTER AS A PARTNER.</h2>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xbdlnwyw" method="POST">
+                <div class="form-grid">
+                    <input type="text" name="agency_name" placeholder="AGENCY NAME" required>
+                    <input type="text" name="contact_person" placeholder="CONTACT PERSON" required>
+                    <input type="email" name="email" placeholder="OFFICIAL BUSINESS EMAIL" required>
+                    <input type="tel" name="phone" placeholder="WHATSAPP / MOBILE" required>
+                    <select name="interested_region" required>
+                        <option value="" disabled selected>PRIMARY REGION OF INTEREST</option>
+                        <option value="Caucasus">Caucasus & Central Asia</option>
+                        <option value="SE Asia">Southeast Asia</option>
+                        <option value="East Asia">East Asia</option>
+                        <option value="Islands/Africa">Islands & Africa</option>
+                        <option value="Europe/ME">Europe & Middle East</option>
+                    </select>
+                    <input type="text" name="est_groups" placeholder="ESTIMATED ANNUAL GROUPS">
+                </div>
+                <textarea name="message" rows="5" placeholder="SPECIFIC REQUIREMENTS OR B2B INQUIRY DETAILS" required></textarea>
+                <button type="submit" class="submit-btn">SEND PARTNERSHIP REQUEST</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section" id="terms">
+        <span class="section-tag">Compliance & Policy</span>
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px;">B2B TERMS & CONDITIONS.</h2>
+        <div class="legal-box">
+            <div class="term-item"><h4>01. Booking Confirmation</h4><p>Services are confirmed only upon receipt of advance payment and issuance of an official TTA Group Adventure Agency digital voucher.</p></div>
+            <div class="term-item"><h4>02. B2B Pricing</h4><p>All rates are Nett and non-commissionable. Rates include local taxes but are subject to revision if government taxes change.</p></div>
+            <div class="term-item"><h4>03. Cancellation Policy</h4><p>30-60 Days: 100% Refund. 15-30 Days: 50% Refund. Less than 15 Days: No refund/100% cancellation charges apply.</p></div>
+            <div class="term-item"><h4>04. Amendment Fees</h4><p>First amendment is free; subsequent changes to confirmed itineraries incur a service fee of $25 per change.</p></div>
+            <div class="term-item"><h4>05. Vehicle Usage</h4><p>Standard vehicles are provided for point-to-point transfers and listed sightseeing only (8 hours/80km per day typical).</p></div>
+            <div class="term-item"><h4>06. Child Policy</h4><p>Children under 2 years are FOC (sharing bed). Children 2-11 years are charged at 75% of adult rate with an extra bed.</p></div>
+            <div class="term-item"><h4>07. Hotel Check-in</h4><p>Standard check-in is 14:00 and check-out is 11:00. Early check-in is subject to availability and may be charged extra.</p></div>
+            <div class="term-item"><h4>08. Force Majeure</h4><p>TTA Group Adventure Agency is not liable for delays or cancellations caused by weather, strikes, or political unrest.</p></div>
+            <div class="term-item"><h4>09. No-Show Policy</h4><p>No-shows for transfers or tours are non-refundable. Drivers will wait a maximum of 30 minutes at pickup points.</p></div>
+            <div class="term-item"><h4>10. Luggage Policy</h4><p>Standard allowance is 1 medium suitcase and 1 handbag per person. Oversized luggage requires a vehicle upgrade at cost.</p></div>
+            <div class="term-item"><h4>11. Insurance</h4><p>It is mandatory for all guests to have valid international travel insurance. TTA Group Adventure Agency is not liable for medical emergencies.</p></div>
+            <div class="term-item"><h4>12. Snowfall Clause</h4><p>In regions requiring 4x4 vehicles due to heavy snow, the cost difference is borne by the client at the time of service.</p></div>
+            <div class="term-item"><h4>13. Payments</h4><p>Final payment must be cleared 21 days prior to arrival. Failure to pay may result in automatic cancellation.</p></div>
+            <div class="term-item"><h4>14. Guide Services</h4><p>Driver-cum-guides provide basic info. For historical context, a licensed professional guide must be pre-booked.</p></div>
+            <div class="term-item"><h4>15. Legal Jurisdiction</h4><p>Any disputes or claims arising shall be subject to the exclusive jurisdiction of the company’s registered headquarters.</p></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">TTA Group Adventure Agency</div>
+        <div class="footer-contact">
+            <p><i class="fas fa-envelope" style="color:var(--accent); margin-right: 10px;"></i> salesindia@ttagroups.net</p>
+            <p><i class="fas fa-envelope" style="color:var(--accent); margin-right: 10px;"></i> swapnil@ttagroups.net</p>
+            <p><i class="fas fa-phone" style="color:var(--accent); margin-right: 10px;"></i> +91 90282 27102</p>
+            <p><i class="fab fa-instagram" style="color:var(--accent); margin-right: 10px;"></i> @tta_group_dmc</p>
+        </div>
+        <p style="opacity: 0.3; font-size: 0.65rem; letter-spacing: 2px;">© 2026 REGISTERED DMC | GLOBAL GROUND OPERATIONS</p>
+    </footer>
+
+    <script>
+        const regions = [
+            { name: "Caucasus & Central Asia", id: "caucasus", img: "https://images.unsplash.com/photo-1527269534026-c86f4009eace?auto=format&fit=crop&w=800" },
+            { name: "Southeast Asia", id: "seasia", img: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=800" },
+            { name: "East Asia", id: "eastasia", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800" },
+            { name: "Islands & Africa", id: "islands", img: "https://images.unsplash.com/photo-1589519160732-57fc497e9880?auto=format&fit=crop&w=800" },
+            { name: "Europe & Middle East", id: "eurome", img: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800" }
+        ];
+
+        const container = document.getElementById('regionContainer');
+        regions.forEach(r => {
+            const card = document.createElement('div');
+            card.className = 'region-card';
+            // Functional routing to region.html with the correct query parameter
+            card.onclick = () => location.href = `region.html?region=${r.id}`;
+            card.innerHTML = `
+                <img src="${r.img}" alt="${r.name}">
+                <div class="region-label">
+                    <h3>${r.name}</h3>
+                    <p style="color:var(--accent); font-weight:800; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase;">View Network Hubs →</p>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

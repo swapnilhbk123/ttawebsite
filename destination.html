@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title id="seoTitle">B2B Destination Management | TTA Group Adventure Agency</title>
+    <meta name="description" content="Professional DMC and ground handling services for Southeast Asia, Europe, and the Caucasus. Custom B2B itineraries, private transfers, and 24/7 support for travel partners.">
+    <meta name="keywords" content="DMC, B2B Travel, Ground Operations, TTA Group, Luxury Itineraries, Travel Agency Partner, Private Chauffeur Tours">
+    <meta name="author" content="TTA Group">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Syne:wght@400;700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --bg: #050505; --card: #0c0c0c; --accent: #c5a059; --text: #ffffff; --dim: #a0a0a0; --border: rgba(197, 160, 89, 0.15); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        
+        nav { padding: 25px 8%; position: absolute; width: 100%; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-family: 'Syne'; color: #fff; text-decoration: none; font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; }
+
+        .hero { 
+            height: 60vh; position: relative; display: flex; align-items: center; padding: 0 8%;
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        .hero::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg)); }
+        
+        .hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .hero-content h1 { font-family: 'Syne'; font-size: clamp(3rem, 8vw, 5rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 20px; letter-spacing: -2px; }
+
+        .container { padding: 60px 8% 150px; display: grid; grid-template-columns: 2fr 1fr; gap: 80px; }
+        
+        .itinerary-day { margin-bottom: 50px; border-left: 1px solid var(--accent); padding-left: 35px; position: relative; }
+        .itinerary-day::before { content: ''; position: absolute; left: -5px; top: 0; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
+        .itinerary-day h3 { font-family: 'Syne'; color: var(--accent); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        .itinerary-day h4 { font-family: 'Cormorant Garamond'; font-size: 2rem; font-style: italic; margin-bottom: 15px; color: #fff; line-height: 1.2; }
+        .itinerary-day p { color: var(--dim); font-size: 1.05rem; }
+
+        .custom-footnote { margin-top: 60px; padding: 40px; background: rgba(197, 160, 89, 0.05); border: 1px dashed var(--border); border-radius: 4px; }
+        .custom-footnote h5 { font-family: 'Syne'; color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
+        .custom-footnote p { font-size: 0.9rem; color: var(--dim); font-style: italic; }
+
+        .sidebar-box { background: var(--card); border: 1px solid var(--border); padding: 40px; position: sticky; top: 40px; }
+        .sidebar-box h5 { font-family: 'Syne'; font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        .ig-sidebar-cta { margin-top: 30px; padding: 20px; background: linear-gradient(45deg, rgba(240, 148, 51, 0.1), rgba(188, 24, 136, 0.1)); border: 1px solid var(--border); border-radius: 4px; text-align: center; }
+        .ig-sidebar-cta i { font-size: 2rem; margin-bottom: 10px; background: linear-gradient(45deg, #f09433, #bc1888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .ig-sidebar-cta p { font-size: 0.8rem; color: var(--text); font-weight: 600; margin-bottom: 15px; }
+
+        .cta-bar { 
+            position: fixed; bottom: 0; width: 100%; background: rgba(10,10,10,0.98); 
+            backdrop-filter: blur(20px); border-top: 1px solid var(--border); 
+            padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+
+        .btn { display: inline-block; padding: 16px 30px; background: var(--accent); color: #000; text-decoration: none; font-family: 'Syne'; font-weight: 800; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; margin-left: 10px; }
+
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .cta-bar { flex-direction: column; gap: 15px; text-align: center; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-text">TTA GROUP ADVENTURE AGENCY</a>
+        <a href="javascript:history.back()" style="color:var(--accent); text-decoration:none; font-size:0.7rem; font-weight:800; letter-spacing:1px;">← BACK TO NETWORK</a>
+    </nav>
+
+    <div class="hero" id="heroBg">
+        <div class="hero-content">
+            <span style="color:var(--accent); font-weight:800; letter-spacing:4px; font-size:0.7rem; text-transform:uppercase;" id="destTag">DESTINATION MANAGEMENT</span>
+            <h1 id="destTitle">DMC Operations</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <div id="itineraryContainer"></div>
+            
+            <div class="custom-footnote">
+                <h5>Operational Note for Partners</h5>
+                <p>
+                    The itinerary displayed above is a <strong>curated sample</strong> designed to showcase our ground handling capabilities and typical logistics flow. 
+                    At <strong>TTA Group Adventure Agency</strong>, we specialize in bespoke travel design. We offer over 20+ variations for this destination, ranging from budget-conscious group tours to ultra-luxury private expeditions. 
+                    <br><br>
+                    Contact our desk for a customized white-labeled proposal tailored to your specific guest profile.
+                </p>
+            </div>
+        </div>
+
+        <aside>
+            <div class="sidebar-box">
+                <h5>GROUND INCLUSIONS</h5>
+                <ul style="list-style:none; font-size:0.85rem; color:var(--dim);">
+                    <li style="margin-bottom:15px;"><i class="fas fa-car" style="color:var(--accent); margin-right:10px;"></i> Private AC Vehicles & Driver</li>
+                    <li style="margin-bottom:15px;"><i class="fas fa-user-tie" style="color:var(--accent); margin-right:10px;"></i> Professional Local Guide</li>
+                    <li style="margin-bottom:15px;"><i class="fas fa-headset" style="color:var(--accent); margin-right:10px;"></i> 24/7 B2B Operational Help-Desk</li>
+                    <li style="margin-bottom:15px;"><i class="fas fa-file-invoice" style="color:var(--accent); margin-right:10px;"></i> All Entrance & Toll Management</li>
+                </ul>
+                
+                <div class="ig-sidebar-cta">
+                    <i class="fab fa-instagram"></i>
+                    <p>Live updates from the field</p>
+                    <a href="https://www.instagram.com/tta_group_dmc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.6rem;">Follow TTA Group</a>
+                </div>
+
+                <div style="margin-top:30px; font-size:0.75rem; border-top:1px solid var(--border); padding-top:20px;">
+                    <p style="color:var(--accent); margin-bottom:5px;"><strong>FLEXIBILITY & CUSTOMIZATION</strong></p>
+                    <p style="color:var(--dim); line-height:1.4;">Need to add days or upgrade stays? <strong>Our ground ops are fully adaptive.</strong></p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="cta-bar">
+        <div><h4 style="font-family:'Syne'; color:#fff; font-size:1.1rem; letter-spacing:1px;">GET B2B NETT RATES</h4></div>
+        <div style="display:flex;">
+            <a href="index.html#enquiry" class="btn">Enquire Now</a>
+            <a href="https://www.instagram.com/tta_group_dmc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-ig">
+                <i class="fab fa-instagram"></i> View Portfolio
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const destinations = {
+            azerbaijan: { title: "Azerbaijan", tag: "Land of Fire", img: "https://images.pexels.com/photos/5698867/pexels-photo-5698867.jpeg", days: [{ day: "Day 01", title: "Baku Arrival & Boulevard", desc: "Private VIP transfer from GYD Airport. Evening visit to the Caspian Sea Boulevard and Flame Towers." },{ day: "Day 02", title: "Old City & Modernity", desc: "Walking tour of Icherisheher (Old City) and the Zaha Hadid-designed Heydar Aliyev Center." },{ day: "Day 03", title: "Gobustan & Mud Volcanoes", desc: "Exploration of UNESCO rock art and the bubbling mud volcanoes of the Absheron region." },{ day: "Day 04", title: "Ateshgah Fire Temple", desc: "Visit the Temple of Eternal Fire and Yanar Dag (Burning Mountain) natural gas fire." },{ day: "Day 05", title: "Nizami Street & Departure", desc: "Leisure shopping at Nizami Street followed by private airport transfer." }]},
+            georgia: { title: "Georgia", tag: "Caucasus Heritage", img: "https://images.pexels.com/photos/10100412/pexels-photo-10100412.jpeg", days: [{ day: "Day 01", title: "Tbilisi Arrival", desc: "Private transfer to hotel. Evening cable car to Narikala Fortress and Sulphur Bath tour." },{ day: "Day 02", title: "Mtskheta ancient capital", desc: "Visit Svetitskhoveli Cathedral and the hilltop Jvari Monastery." },{ day: "Day 03", title: "Kazbegi Mountains", desc: "Scenic drive via Ananuri Fortress to the Gergeti Trinity Church via 4x4 vehicles." },{ day: "Day 04", title: "Sighnaghi Wine Region", desc: "Full day in the City of Love, exploring fortified walls and local Kakhetian cellars." },{ day: "Day 05", title: "Market Tour & Departure", desc: "Visit the Dry Bridge market for souvenirs before your private transfer to TBS Airport." }]},
+            kazakhstan: { title: "Kazakhstan", tag: "The Great Steppe", img: "https://images.pexels.com/photos/14812836/pexels-photo-14812836.jpeg", days: [{ day: "Day 01", title: "Almaty Arrival", desc: "Private transfer to your hotel. Evening panoramic city tour of Almaty." },{ day: "Day 02", title: "Medeu & Shymbulak", desc: "Visit the world's highest skating rink and cable car ride to Shymbulak Ski Resort." },{ day: "Day 03", title: "Charyn Canyon", desc: "Full day expedition to the Valley of Castles with 4x4 off-road handling." },{ day: "Day 04", title: "Big Almaty Lake", desc: "Drive to the high-altitude lake for crystal blue views and mountain photography." },{ day: "Day 05", title: "Green Bazaar & Departure", desc: "Explore local food markets and Central State Museum before departure." }]},
+            uzbekistan: { title: "Uzbekistan", tag: "Silk Road Wonders", img: "https://images.pexels.com/photos/11056501/pexels-photo-11056501.jpeg", days: [{ day: "Day 01", title: "Tashkent Arrival", desc: "Private transfer and tour of the Tashkent Metro stations and Independence Square." },{ day: "Day 02", title: "Samarkand Rail Journey", desc: "Visit Registan Square, the Bibi-Khanym Mosque, and the Shah-i-Zinda necropolis." },{ day: "Day 03", title: "Bukhara Heritage", desc: "Explore the Po-i-Kalyan complex, Ark of Bukhara, and the ancient trading domes." },{ day: "Day 04", title: "Chorsu Bazaar Culture", desc: "Traditional Plov lunch experience and exploration of the massive dome bazaar." },{ day: "Day 05", title: "Old City Farewell", desc: "Private transfers for return flight via TAS International Airport." }]},
+            russia: { title: "Russia", tag: "Imperial Elegance", img: "https://images.pexels.com/photos/2362917/pexels-photo-2362917.jpeg", days: [{ day: "Day 01", title: "Moscow Arrival", desc: "Private transfer and evening illumination tour of the Red Square and GUM." },{ day: "Day 02", title: "The Kremlin & Metro", desc: "Guided tour of the Kremlin Armoury and the 'Palaces of the People' (Metro stations)." },{ day: "Day 03", title: "St. Petersburg Sapsan", desc: "High-speed rail transfer to the northern capital. Evening Neva River cruise." },{ day: "Day 04", title: "Hermitage Museum", desc: "Full day exploring one of the world's largest art and culture museums." },{ day: "Day 05", title: "Peterhof Fountains", desc: "Visit the 'Russian Versailles' gardens before private airport transfer." }]},
+            bali: { title: "Bali", tag: "Tropical Luxury", img: "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg", days: [{ day: "Day 01", title: "Arrival & Ubud Check-in", desc: "Private transfer to Ubud. Evening at leisure to enjoy the villa amenities." },{ day: "Day 02", title: "Kintamani & Rice Terraces", desc: "Visit Mount Batur viewpoint, Tirta Empul temple, and Tegalalang terraces." },{ day: "Day 03", title: "Nusa Penida Expedition", desc: "Fast boat to Penida for Kelingking Beach and Angel's Billabong private tour." },{ day: "Day 04", title: "Uluwatu Sunset", desc: "Cliffside temple visit followed by the iconic fire dance and Jimbaran dinner." },{ day: "Day 05", title: "Tanah Lot Farewell", desc: "Morning visit to the sea temple followed by private transfer to DPS Airport." }]},
+            thailand: { title: "Thailand", tag: "Siam Discovery", img: "https://images.pexels.com/photos/4320473/pexels-photo-4320473.jpeg", days: [{ day: "Day 01", title: "Bangkok Arrival", desc: "Airport meet-and-greet. Evening Chao Phraya dinner cruise." },{ day: "Day 02", title: "Grand Palace & Temples", desc: "Tour of the Emerald Buddha and the Reclining Buddha with local guide." },{ day: "Day 03", title: "Floating Markets", desc: "Morning visit to Damnoen Saduak and Maeklong Railway market." },{ day: "Day 04", title: "Phuket Beach Bliss", desc: "Domestic transfer to beach resort. Sunset yacht experience option." },{ day: "Day 05", title: "Island Hopping", desc: "Visit Phi Phi or James Bond Island before evening airport transfer." }]},
+            vietnam: { title: "Vietnam", tag: "Dragon Heritage", img: "https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg", days: [{ day: "Day 01", title: "Hanoi Arrival", desc: "Private transfer and Old Quarter rickshaw tour." },{ day: "Day 02", title: "Ha Long Bay Cruise", desc: "Overnight luxury cruise experience among the limestone karsts." },{ day: "Day 03", title: "Da Nang & Hoi An", desc: "Flight to Central Vietnam. Evening lantern walk in Hoi An ancient town." },{ day: "Day 04", title: "Ba Na Hills", desc: "Cable car ride to the Golden Bridge (Hand Bridge) and French Village." },{ day: "Day 05", title: "Dragon Bridge Departure", desc: "Private transfer for return flight from Da Nang International." }]},
+            singapore: { title: "Singapore", tag: "Garden City", img: "https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg", days: [{ day: "Day 01", title: "Marina Bay Arrival", desc: "Private transfer. Evening visit to Gardens by the Bay (Light Show)." },{ day: "Day 02", title: "Sentosa Island", desc: "Full day at Universal Studios or SEA Aquarium with private handling." },{ day: "Day 03", title: "Singapore City Tour", desc: "Merlion Park, Little India, and Chinatown heritage walk." },{ day: "Day 04", title: "Night Safari", desc: "Morning at leisure (Orchard Road). Evening VIP tram tour at Night Safari." },{ day: "Day 05", title: "Jewel Changi Departure", desc: "Experience the world's best airport before departure." }]},
+            malaysia: { title: "Malaysia", tag: "Multicultural Heart", img: "https://images.pexels.com/photos/2135677/pexels-photo-2135677.jpeg", days: [{ day: "Day 01", title: "KL Skyline Arrival", desc: "Private KUL transfer and evening tour of Petronas Twin Towers." },{ day: "Day 02", title: "Batu Caves & Genting", desc: "Climb the rainbow steps and take the cable car to the Highlands resort." },{ day: "Day 03", title: "Putrajaya Capital", desc: "Pink Mosque tour and scenic cruise on Putrajaya Lake." },{ day: "Day 04", title: "Sunway Lagoon Theme", desc: "Theme park day or heritage tour to the historic city of Malacca." },{ day: "Day 05", title: "Shopping & Departure", desc: "Visit Bukit Bintang for premium shopping before private airport transfer." }]},
+            philippines: { title: "Philippines", tag: "Island Paradises", img: "https://images.pexels.com/photos/1628150/pexels-photo-1628150.jpeg", days: [{ day: "Day 01", title: "Manila Intramuros", desc: "Airport pickup and tour of the historic Spanish walled city." },{ day: "Day 02", title: "El Nido Palawan", desc: "Flight to Palawan. Island hopping tour of lagoons and beaches." },{ day: "Day 03", title: "Big Lagoon Kayak", desc: "Private snorkeling tour and beach BBQ experience." },{ day: "Day 04", title: "Underground River", desc: "UNESCO cave expedition in Puerto Princesa." },{ day: "Day 05", title: "Manila Farewell", desc: "Return to Manila for evening departure." }]},
+            china: { title: "China", tag: "Great Wall Heritage", img: "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg", days: [{ day: "Day 01", title: "Beijing Arrival", desc: "Private transfer to hotel. Traditional Peking Duck dinner." },{ day: "Day 02", title: "The Forbidden City", desc: "In-depth tour of the Imperial Palace and Temple of Heaven." },{ day: "Day 03", title: "Mutianyu Great Wall", desc: "VIP cable car access to the best-preserved section of the Wall." },{ day: "Day 04", title: "Shanghai Skyline", desc: "High-speed rail to Shanghai. Evening walk on The Bund." },{ day: "Day 05", title: "Yu Garden Departure", desc: "Explore the old town before private airport transfer." }]},
+            japan: { title: "Japan", tag: "Zen & Neon", img: "https://images.pexels.com/photos/161401/fuji-mountain-mountain-flowers-cherry-blossoms-161401.jpeg", days: [{ day: "Day 01", title: "Tokyo Arrival", desc: "Airport limousine transfer. Evening neon tour of Shinjuku." },{ day: "Day 02", title: "Mt. Fuji & Hakone", desc: "Lake Ashi cruise and panoramic views of Fuji-san." },{ day: "Day 03", title: "Kyoto Shinkansen", desc: "Bullet train to Kyoto. Visit Fushimi Inari Shrines." },{ day: "Day 04", title: "Arashiyama Bamboo", desc: "Morning walk in the Bamboo Grove and Golden Pavilion tour." },{ day: "Day 05", title: "Nara Deer Park", desc: "Visit Great Buddha in Nara before evening KIX transfer." }]},
+            southkorea: { title: "South Korea", tag: "Dynamic Spirit", img: "https://images.pexels.com/photos/2314983/pexels-photo-2314983.jpeg", days: [{ day: "Day 01", title: "Seoul Hanok", desc: "Private transfer and Bukchon Hanok Village heritage walk." },{ day: "Day 02", title: "Gyeongbokgung Palace", desc: "Royal changing of the guard ceremony and Hanbok experience." },{ day: "Day 03", title: "DMZ Border Tour", desc: "Guided tour to the 3rd Infiltration Tunnel and Unification Bridge." },{ day: "Day 04", title: "N Seoul Tower", desc: "Panoramic cable car and Myeongdong shopping tour." },{ day: "Day 05", title: "Gangnam Farewell", desc: "Visit Starfield Library before ICN airport transfer." }]},
+            seychelles: { title: "Seychelles", tag: "Luxury Escape", img: "https://images.pexels.com/photos/2444403/pexels-photo-2444403.jpeg", days: [{ day: "Day 01", title: "Mahe Arrival", desc: "Private VIP transfer to beach resort. Relax at Beau Vallon." },{ day: "Day 02", title: "Praslin Island", desc: "Ferry transfer to Praslin. Visit Vallee de Mai (Coco de Mer)." },{ day: "Day 03", title: "La Digue Bicycles", desc: "Explore Anse Source d'Argent granite formations." },{ day: "Day 04", title: "Private Boat Charter", desc: "Snorkeling at St. Pierre with champagne lunch on board." },{ day: "Day 05", title: "Victoria Market", desc: "Souvenir shopping in the world's smallest capital." }]},
+            maldives: { title: "Maldives", tag: "Azure Escape", img: "https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg", days: [{ day: "Day 01", title: "Speedboat Arrival", desc: "Arrival at MLE. Private speedboat to your overwater villa." },{ day: "Day 02", title: "Undersea Discovery", desc: "Guided snorkeling or diving at the house reef." },{ day: "Day 03", title: "Sandbank Picnic", desc: "Private castaway lunch on a secluded sandbank." },{ day: "Day 04", title: "Sunset Fishing", desc: "Traditional Maldivian line-fishing during golden hour." },{ day: "Day 05", title: "Seaplane Return", desc: "Aerial views during your return to Malé Airport." }]},
+            srilanka: { title: "Sri Lanka", tag: "Pearl of Indian Ocean", img: "https://images.pexels.com/photos/1531660/pexels-photo-1531660.jpeg", days: [{ day: "Day 01", title: "Colombo City", desc: "Private transfer and tour of the Lotus Tower and Galle Face." },{ day: "Day 02", title: "Sigiriya Rock", desc: "Climb the ancient Lion's Fortress (UNESCO Heritage)." },{ day: "Day 03", title: "Kandy Temple", desc: "Visit Temple of the Tooth and Royal Botanical Gardens." },{ day: "Day 04", title: "Ella Train Ride", desc: "The world's most beautiful train ride through tea hills." },{ day: "Day 05", title: "Bentota Beach", desc: "Water sports and relaxation before private CMB transfer." }]},
+            mauritius: { title: "Mauritius", tag: "Exotic Harmony", img: "https://images.pexels.com/photos/1592318/pexels-photo-1592318.jpeg", days: [{ day: "Day 01", title: "South Coast Tour", desc: "Visit Trou aux Cerfs volcano and Grand Bassin lake." },{ day: "Day 02", title: "Seven Coloured Earth", desc: "Explore Chamarel Waterfall and dune formations." },{ day: "Day 03", title: "Ile aux Cerfs", desc: "Speedboat tour to the paradise island for activities." },{ day: "Day 04", title: "Port Louis Market", desc: "Visit the Caudan Waterfront and local spice shops." },{ day: "Day 05", title: "Botanical Farewell", desc: "Pamplemousses gardens visit before evening MRU transfer." }]},
+            egypt: { title: "Egypt", tag: "Pharaonic Legacy", img: "https://images.pexels.com/photos/3889987/pexels-photo-3889987.jpeg", days: [{ day: "Day 01", title: "Cairo Pyramids", desc: "Private tour of Giza Pyramids and the Great Sphinx." },{ day: "Day 02", title: "Egyptian Museum", desc: "Discover King Tut’s treasures and the Royal Mummies." },{ day: "Day 03", title: "Luxor Valley Kings", desc: "Flight to Luxor. Explore the ancient royal tombs." },{ day: "Day 04", title: "Karnak Temple", desc: "Visit the massive temple complex and Luxor Temple." },{ day: "Day 05", title: "Khan el-Khalili", desc: "Souvenir shopping in the old bazaar before departure." }]},
+            kenya: { title: "Kenya", tag: "Safari Adventure", img: "https://images.pexels.com/photos/1018598/pexels-photo-1018598.jpeg", days: [{ day: "Day 01", title: "Nairobi Arrival", desc: "Private transfer and visit to the Giraffe Centre." },{ day: "Day 02", title: "Masai Mara Safari", desc: "Flight to the Mara. Evening hunt for the Big Five." },{ day: "Day 03", title: "Great Migration", desc: "Full day safari tracking the wildebeest migration." },{ day: "Day 04", title: "Maasai Village", desc: "Cultural encounter with the Maasai warriors." },{ day: "Day 05", title: "Naivasha Farewell", desc: "Morning boat cruise before return flight from NBO." }]},
+            turkey: { title: "Turkey", tag: "Ottoman Splendor", img: "https://images.pexels.com/photos/2048865/pexels-photo-2048865.jpeg", days: [{ day: "Day 01", title: "Bosphorus Cruise", desc: "Private transfer and sunset cruise between continents." },{ day: "Day 02", title: "Blue Mosque Sophia", desc: "Full day heritage tour of Sultanahmet district." },{ day: "Day 03", title: "Cappadocia Balloon", desc: "Flight to Nevsehir. Sunrise hot air balloon experience." },{ day: "Day 04", title: "Goreme Cave City", desc: "Explore cave churches and underground Kaymakli." },{ day: "Day 05", title: "Grand Bazaar", desc: "Final shopping for delights and spices before departure." }]},
+            dubai: { title: "Dubai", tag: "Desert Luxury", img: "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg", days: [{ day: "Day 01", title: "Burj Khalifa Top", desc: "Private transfer and visit to the world's tallest tower." },{ day: "Day 02", title: "Desert Safari VIP", desc: "4x4 dune bashing and luxury camp dinner shows." },{ day: "Day 03", title: "Abu Dhabi Tour", desc: "Full day tour to the Sheikh Zayed Mosque and Louvre." },{ day: "Day 04", title: "Palm Jumeirah", desc: "Visit Atlantis and The View at the Palm." },{ day: "Day 05", title: "Dubai Mall Shopping", desc: "Final day at leisure before private DXB transfer." }]},
+            italy: { title: "Italy", tag: "La Dolce Vita", img: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg", days: [{ day: "Day 01", title: "Rome Colosseum", desc: "Private VIP tour of the Colosseum and Roman Forum." },{ day: "Day 02", title: "Vatican Museum", desc: "Sistine Chapel and St. Peter's with expert guide." },{ day: "Day 03", title: "Florence Art", desc: "High-speed rail to Florence. Visit the Academy." },{ day: "Day 04", title: "Venice Gondola", desc: "Train to Venice. Private sunset gondola ride." },{ day: "Day 05", title: "St. Mark's Farewell", desc: "Explore the Doge's Palace before airport transfer." }]},
+            france: { title: "France", tag: "Parisian Elegance", img: "https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg", days: [{ day: "Day 01", title: "Eiffel Sunset", desc: "Private transfer and evening Seine River cruise." },{ day: "Day 02", title: "Louvre Museum", desc: "Guided tour of the world’s most famous galleries." },{ day: "Day 03", title: "Versailles Palace", desc: "Full day tour of the Sun King’s opulent residence." },{ day: "Day 04", title: "Montmartre Walk", desc: "Walking tour of Sacré-Cœur and artist square." },{ day: "Day 05", title: "Champs-Élysées", desc: "Luxury shopping and Ladurée experience before CDG." }]},
+            switzerland: { title: "Switzerland", tag: "Alpine Majesty", img: "https://images.pexels.com/photos/415574/pexels-photo-415574.jpeg", days: [{ day: "Day 01", title: "Lucerne Lake", desc: "Private transfer and boat cruise on Lake Lucerne." },{ day: "Day 02", title: "Mt. Titlis Snow", desc: "Rotating cable car ride to 3,000m summits." },{ day: "Day 03", title: "Jungfraujoch Rail", desc: "Train to the 'Top of Europe' high altitude station." },{ day: "Day 04", title: "Zermatt Village", desc: "Visit car-free Zermatt and view the Matterhorn." },{ day: "Day 05", title: "Zurich Old Town", desc: "Chocolate tasting tour before private ZRH transfer." }]},
+            netherlands: { title: "Netherlands", tag: "Canal Heritage", img: "https://images.pexels.com/photos/208732/pexels-photo-208732.jpeg", days: [{ day: "Day 01", title: "Amsterdam Canals", desc: "Private transfer and evening luxury canal boat." },{ day: "Day 02", title: "Windmill Village", desc: "Visit Zaanse Schans windmills and cheese farms." },{ day: "Day 03", title: "Van Gogh Heritage", desc: "Skip-the-line access to the Van Gogh Museum." },{ day: "Day 04", title: "Flower Gardens", desc: "Seasonal tour of Keukenhof or tulip fields." },{ day: "Day 05", title: "Dam Square Farewell", desc: "Leisure time in central Amsterdam before AMS transfer." }]}
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const data = destinations[id];
+
+        if (data) {
+            document.title = `${data.title} | B2B Itinerary | TTA Group DMC`;
+            document.getElementById('seoTitle').innerText = `${data.title} B2B Operations | TTA Group`;
+            document.getElementById('destTitle').innerText = data.title;
+            document.getElementById('destTag').innerText = data.tag;
+            document.getElementById('heroBg').style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg)), url('${data.img}')`;
+            
+            const container = document.getElementById('itineraryContainer');
+            data.days.forEach(d => {
+                container.innerHTML += `<div class="itinerary-day"><h3>${d.day}</h3><h4>${d.title}</h4><p>${d.desc}</p></div>`;
+            });
+        }
+    </script>
+</body>
+</html>
+
+```
