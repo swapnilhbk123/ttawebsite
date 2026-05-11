@@ -12,54 +12,87 @@
         body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
         nav { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); }
         .logo { font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 1rem; color: #fff; text-decoration: none; }
-        .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%); }
+        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%); }
         .hero span { color: var(--accent); font-weight: 800; letter-spacing: 6px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 25px; display: block; }
-        .hero h1 { font-size: clamp(3.5rem, 12vw, 8.5rem); font-weight: 800; line-height: 0.85; letter-spacing: -5px; text-transform: uppercase; }
-        .section-label { padding: 120px 8% 40px; font-size: 0.75rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; border-top: 1px solid var(--border); margin-top: 80px; }
+        .hero h1 { font-size: clamp(3.5rem, 10vw, 8rem); font-weight: 800; line-height: 0.85; letter-spacing: -5px; text-transform: uppercase; }
+        
+        /* Company Profile Section */
+        .profile-sec { padding: 120px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; border-top: 1px solid var(--border); }
+        .profile-text h2 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 30px; line-height: 1; }
+        .profile-text p { color: var(--dim); font-size: 1.1rem; margin-bottom: 25px; max-width: 500px; }
+        .stats { display: flex; gap: 40px; margin-top: 50px; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); }
+        .stat-item p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+
+        .section-label { padding: 120px 8% 40px; font-size: 0.75rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; border-top: 1px solid var(--border); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: var(--border); margin: 0 8%; border: 1px solid var(--border); }
         .card { background: var(--bg); height: 480px; position: relative; overflow: hidden; cursor: pointer; transition: 0.4s; }
-        .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1); filter: grayscale(100%); }
+        .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; transition: 0.8s; filter: grayscale(100%); }
         .card:hover img { opacity: 0.9; filter: grayscale(0%); transform: scale(1.1); }
         .card-info { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
         .card-info h3 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; letter-spacing: -1px; }
         .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
+
         .legal-container { padding: 40px 8% 120px; }
         .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; background: var(--card); padding: 60px; border-radius: 30px; border: 1px solid var(--border); }
         .term-item h4 { color: var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
         .term-item p { color: var(--dim); font-size: 0.85rem; line-height: 1.7; }
+        
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #fff; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; transition: 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
-        footer { padding: 60px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--dim); font-size: 0.8rem; letter-spacing: 1px; }
+        footer { padding: 60px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--dim); font-size: 0.8rem; }
+        
+        @media (max-width: 900px) { .profile-sec { grid-template-columns: 1fr; } .profile-text h2 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
     <nav><a href="#" class="logo">TTA GROUP</a></nav>
     <section class="hero">
-        <span>The Gold Standard in Ground Operations</span>
-        <h1>GLOBAL<br>PRECISION.</h1>
+        <span>B2B Ground Handling & DMC</span>
+        <h1>BEYOND<br>BOUNDARIES.</h1>
     </section>
+
+    <section class="profile-sec">
+        <div class="profile-text">
+            <h2>OUR LEGACY.</h2>
+            <p>With over a decade of specialized experience in ground operations, TTA Group has evolved into a premier Destination Management Company (DMC). We bridge the gap between global travel agencies and local ground realities.</p>
+            <p>Our core strength lies in precision logistics, high-value transfers, and curated B2B itineraries that ensure your clients experience the world with zero friction.</p>
+            <div class="stats">
+                <div class="stat-item"><h3>10Y+</h3><p>EXPERIENCE</p></div>
+                <div class="stat-item"><h3>28</h3><p>DESTINATIONS</p></div>
+                <div class="stat-item"><h3>24/7</h3><p>SUPPORT</p></div>
+            </div>
+        </div>
+        <div style="background: var(--card); height: 500px; border-radius: 30px; border: 1px solid var(--border); overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=1000" style="width:100%; height:100%; object-fit:cover; opacity: 0.6;">
+        </div>
+    </section>
+
     <div id="destination-sections"></div>
+
     <div class="section-label">02. B2B Terms & Conditions</div>
     <div class="legal-container">
         <section class="legal-grid">
-            <div class="term-item"><h4>01. Booking Confirmation</h4><p>Service confirmation is subject to advance payment and issuance of TTA Group digital vouchers. No verbal confirmations are binding.</p></div>
-            <div class="term-item"><h4>02. Pricing & Currency</h4><p>All rates are Nett B2B and quoted in USD or Local Currency. Rates are subject to change in case of government tax revisions.</p></div>
+            <div class="term-item"><h4>01. Booking Confirmation</h4><p>Service confirmation is subject to advance payment and issuance of TTA Group digital vouchers.</p></div>
+            <div class="term-item"><h4>02. Pricing & Currency</h4><p>All rates are Nett B2B and quoted in USD or Local Currency. Rates are subject to change in case of tax revisions.</p></div>
             <div class="term-item"><h4>03. Cancellation Policy</h4><p>30-60 days: 100% Refund. 15-30 days: 50% Refund. Less than 15 days or No-Show: 100% Cancellation charges apply.</p></div>
-            <div class="term-item"><h4>04. Hotel Occupancy</h4><p>Standard check-in 14:00. Check-out 12:00. Requests for early/late check-out are subject to availability and specific hotel surcharges.</p></div>
-            <div class="term-item"><h4>05. Ground Transportation</h4><p>Vehicles provided for point-to-point transfers and listed sightseeing. Any additional hours or route deviations are payable directly to the driver.</p></div>
-            <div class="term-item"><h4>06. Health & Insurance</h4><p>TTA Group does not provide personal travel insurance. It is mandatory for guests to have valid medical and travel insurance for the duration of the trip.</p></div>
-            <div class="term-item"><h4>07. Itinerary Variations</h4><p>Operations reserve the right to alter routes due to roadblocks, weather, or security alerts. TTA Group is not liable for missed sightseeing due to these factors.</p></div>
-            <div class="term-item"><h4>08. Force Majeure</h4><p>TTA Group is not liable for service disruptions caused by acts of God, strikes, pandemics, or civil unrest.</p></div>
-            <div class="term-item"><h4>09. No-Show & Vouchers</h4><p>Vouchers must be presented (digital/physical) at all service points. No-show at pickup locations will result in service forfeiture without refund.</p></div>
-            <div class="term-item"><h4>10. Child & Senior Policy</h4><p>Child rates apply for ages 2-11. Infants under 2 are free for most services but may incur costs for flights or specific activities.</p></div>
-            <div class="term-item"><h4>11. Specific Requirements</h4><p>Special dietary needs or physical assistance requirements must be shared at least 7 days prior to arrival.</p></div>
-            <div class="term-item"><h4>12. Snowfall & 4x4 Policy</h4><p>In regions prone to snow (Georgia, Russia, Kazakhstan, etc.), 4x4 vehicle upgrades required due to weather are at the client's expense.</p></div>
-            <div class="term-item"><h4>13. Documentation</h4><p>Visa and passport validity are the sole responsibility of the traveler. TTA Group is not liable for entry refusals.</p></div>
-            <div class="term-item"><h4>14. Conduct & Ethics</h4><p>TTA Group maintains a zero-tolerance policy for harassment. Services will be terminated if travelers engage in illegal or abusive behavior.</p></div>
-            <div class="term-item"><h4>15. Dispute Resolution</h4><p>All legal disputes are subject to the jurisdiction of the registered headquarters of TTA Group.</p></div>
+            <div class="term-item"><h4>04. Hotel Occupancy</h4><p>Standard check-in 14:00. Check-out 12:00. Early/late check-out requests are subject to hotel availability.</p></div>
+            <div class="term-item"><h4>05. Ground Transportation</h4><p>Vehicles provided for point-to-point transfers and listed sightseeing. Additional hours are payable directly.</p></div>
+            <div class="term-item"><h4>06. Health & Insurance</h4><p>Guests must have valid medical and travel insurance. TTA Group is not liable for medical emergencies.</p></div>
+            <div class="term-item"><h4>07. Itinerary Variations</h4><p>Operations reserve the right to alter routes due to weather or security alerts. TTA Group is not liable for missed sightseeing.</p></div>
+            <div class="term-item"><h4>08. Force Majeure</h4><p>TTA Group is not liable for disruptions caused by acts of God, strikes, pandemics, or civil unrest.</p></div>
+            <div class="term-item"><h4>09. No-Show & Vouchers</h4><p>Vouchers must be presented at all service points. No-show at pickup will result in service forfeiture.</p></div>
+            <div class="term-item"><h4>10. Child & Senior Policy</h4><p>Child rates apply for ages 2-11. Infants under 2 are free for most ground services.</p></div>
+            <div class="term-item"><h4>11. Specific Requirements</h4><p>Dietary needs or physical assistance requests must be shared 7 days prior to arrival.</p></div>
+            <div class="term-item"><h4>12. Snowfall & 4x4 Policy</h4><p>In snowy regions, 4x4 vehicle upgrades required due to weather are at the client's expense.</p></div>
+            <div class="term-item"><h4>13. Documentation</h4><p>Visa and passport validity are the responsibility of the traveler. TTA Group is not liable for entry refusals.</p></div>
+            <div class="term-item"><h4>14. Conduct & Ethics</h4><p>Services will be terminated if travelers engage in illegal or abusive behavior towards staff.</p></div>
+            <div class="term-item"><h4>15. Dispute Resolution</h4><p>All legal disputes are subject to the jurisdiction of TTA Group registered headquarters.</p></div>
         </section>
     </div>
+
     <footer>© 2026 TTA GROUP | DMC & GROUND HANDLING SPECIALISTS</footer>
     <a href="https://wa.me/919028227102" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
     <script>
         const regions = [
             { title: "Caucasus & Central Asia", destinations: ["Azerbaijan", "Georgia", "Kazakhstan", "Uzbekistan", "Russia"] },
@@ -74,7 +107,7 @@
             let grid = document.createElement('div'); grid.className = 'grid';
             region.destinations.forEach(d => {
                 grid.innerHTML += `<div class="card" onclick="location.href='destination.html?id=${encodeURIComponent(d.toLowerCase())}'">
-                    <img src="images/${d.toLowerCase().replace(/\s/g, '')}.jpg" onerror="this.src='https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800'">
+                    <img src="images/${d.toLowerCase().replace(/\s+/g, '')}.jpg" onerror="this.src='https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800'">
                     <div class="card-info"><h3>${d}</h3></div>
                 </div>`;
             });
