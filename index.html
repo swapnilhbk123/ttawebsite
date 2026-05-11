@@ -3,68 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTA Group Adventure Agency | Global B2B Ground Handler & DMC</title>
+    <title>TTA Group Adventure Agency | Global B2B DMC</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --bg: #000; --card: #0a0a0a; --accent: #3b82f6; --text: #fff; --dim: #888; --border: rgba(255,255,255,0.08); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
         body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        /* Navigation */
         nav { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); }
-        .logo { font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 1rem; color: #fff; text-decoration: none; }
+        .logo { font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 1rem; color: #fff; text-decoration: none; }
+        
+        /* Hero Section */
         .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%); }
         .hero span { color: var(--accent); font-weight: 800; letter-spacing: 6px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 25px; display: block; }
-        .hero h1 { font-size: clamp(3.5rem, 10vw, 8rem); font-weight: 800; line-height: 0.85; letter-spacing: -5px; text-transform: uppercase; }
-        
-        /* Company Profile Section */
-        .profile-sec { padding: 120px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; border-top: 1px solid var(--border); }
-        .profile-text h2 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 30px; line-height: 1; }
-        .profile-text p { color: var(--dim); font-size: 1.1rem; margin-bottom: 25px; max-width: 500px; }
-        .stats { display: flex; gap: 40px; margin-top: 50px; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--accent); }
-        .stat-item p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+        .hero h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 800; line-height: 0.85; letter-spacing: -4px; text-transform: uppercase; }
 
-        .section-label { padding: 120px 8% 40px; font-size: 0.75rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; border-top: 1px solid var(--border); }
+        /* Company Profile Section */
+        .profile-sec { padding: 100px 8%; border-top: 1px solid var(--border); }
+        .profile-header { max-width: 900px; margin-bottom: 60px; }
+        .profile-header h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 30px; line-height: 1.1; }
+        .profile-header p { color: var(--dim); font-size: 1.1rem; margin-bottom: 20px; }
+
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .profile-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid var(--border); }
+        .profile-card h3 { color: var(--accent); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; font-weight: 800; }
+        .profile-card h4 { font-size: 1.3rem; margin-bottom: 15px; font-weight: 800; }
+        .profile-card p { color: var(--dim); font-size: 0.9rem; line-height: 1.7; }
+        .profile-card ul { list-style: none; margin-top: 15px; }
+        .profile-card ul li { font-size: 0.85rem; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; color: var(--dim); }
+        .profile-card ul li::before { content: '→'; color: var(--accent); font-weight: 800; }
+
+        /* Destination Grid */
+        .section-label { padding: 120px 8% 40px; font-size: 0.7rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; border-top: 1px solid var(--border); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: var(--border); margin: 0 8%; border: 1px solid var(--border); }
-        .card { background: var(--bg); height: 480px; position: relative; overflow: hidden; cursor: pointer; transition: 0.4s; }
+        .card { background: var(--bg); height: 450px; position: relative; overflow: hidden; cursor: pointer; transition: 0.4s; }
         .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; transition: 0.8s; filter: grayscale(100%); }
-        .card:hover img { opacity: 0.9; filter: grayscale(0%); transform: scale(1.1); }
+        .card:hover img { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
         .card-info { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
         .card-info h3 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; letter-spacing: -1px; }
         .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
 
-        .legal-container { padding: 40px 8% 120px; }
-        .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; background: var(--card); padding: 60px; border-radius: 30px; border: 1px solid var(--border); }
-        .term-item h4 { color: var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
-        .term-item p { color: var(--dim); font-size: 0.85rem; line-height: 1.7; }
-        
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #fff; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; transition: 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.6); text-decoration: none; }
-        footer { padding: 60px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--dim); font-size: 0.8rem; }
-        
-        @media (max-width: 900px) { .profile-sec { grid-template-columns: 1fr; } .profile-text h2 { font-size: 2.5rem; } }
+        /* Legal/Terms Section */
+        .legal-container { padding: 40px 8% 100px; }
+        .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; background: var(--card); padding: 50px; border-radius: 30px; border: 1px solid var(--border); }
+        .term-item h4 { color: var(--accent); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
+        .term-item p { color: var(--dim); font-size: 0.8rem; }
+
+        /* Contact Section */
+        .form-sec { padding: 100px 8%; background: #050505; border-top: 1px solid var(--border); }
+        .form-container { max-width: 850px; margin: 0 auto; text-align: center; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+        label { font-size: 0.6rem; letter-spacing: 2px; color: var(--accent); font-weight: 800; text-transform: uppercase; }
+        input, textarea, select { background: transparent; border: none; border-bottom: 1px solid #333; padding: 15px 0; color: #fff; width: 100%; margin-bottom: 25px; outline: none; font-size: 1rem; }
+        input:focus { border-bottom-color: var(--accent); }
+        .submit-btn { background: #fff; color: #000; border: none; padding: 25px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 3px; margin-top: 20px; }
+
+        /* Footer & Float */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #fff; color: #000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-decoration: none; }
+        footer { padding: 60px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--dim); font-size: 0.75rem; }
+
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
+
     <nav><a href="#" class="logo">TTA Group Adventure Agency</a></nav>
-    
+
     <section class="hero">
-        <span>B2B Ground Handling & DMC</span>
-        <h1>GLOBAL<br>RELIABILITY.</h1>
+        <span>Global DMC & Ground Handling</span>
+        <h1>BEYOND<br>BOUNDARIES.</h1>
     </section>
 
     <section class="profile-sec">
-        <div class="profile-text">
-            <h2>OUR LEGACY.</h2>
-            <p>With over a decade of specialized experience in ground operations, TTA Group Adventure Agency has evolved into a premier Destination Management Company (DMC). We bridge the gap between global travel agencies and local ground realities.</p>
-            <p>Our core strength lies in precision logistics, high-value transfers, and curated B2B itineraries that ensure your clients experience the world with zero friction.</p>
-            <div class="stats">
-                <div class="stat-item"><h3>10Y+</h3><p>EXPERIENCE</p></div>
-                <div class="stat-item"><h3>28</h3><p>DESTINATIONS</p></div>
-                <div class="stat-item"><h3>24/7</h3><p>SUPPORT</p></div>
-            </div>
+        <div class="profile-header">
+            <h2>Destination Management Overview.</h2>
+            <p>TTA Group Adventure Agency is a professional service firm that functions as a local expert for a specific region. While travel agents focus on selling individual components like flights, a DMC manages the actual execution of the trip on the ground.</p>
+            <p>We act as the local office for international travel partners, ensuring that all logistics and services within our destinations are handled reliably and professionally.</p>
         </div>
-        <div style="background: var(--card); height: 500px; border-radius: 30px; border: 1px solid var(--border); overflow: hidden;">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=1000" style="width:100%; height:100%; object-fit:cover; opacity: 0.6;">
+
+        <div class="profile-grid">
+            <div class="profile-card">
+                <h3>Core Functions</h3>
+                <h4>Execution Mastery</h4>
+                <ul>
+                    <li><strong>Ground Logistics:</strong> All physical movement, airport pickups, and private vehicle transfers.</li>
+                    <li><strong>Local Procurement:</strong> Vetting and booking hotels, restaurants, and guides via local relationships.</li>
+                    <li><strong>Program Implementation:</strong> Turning travel concepts into functional day-by-day schedules.</li>
+                </ul>
+            </div>
+            <div class="profile-card">
+                <h3>B2B Model</h3>
+                <h4>Operational Bridge</h4>
+                <p>We primarily work in a B2B capacity. International tour operators partner with us because they need a local entity to oversee their clients’ safety, comfort, and standardization on the ground.</p>
+            </div>
+            <div class="profile-card">
+                <h3>Value Added</h3>
+                <h4>The DMC Advantage</h4>
+                <ul>
+                    <li><strong>Local Knowledge:</strong> Efficient routes and dependable local vendors.</li>
+                    <li><strong>Accountability:</strong> Immediate local resolution for delays or changes.</li>
+                    <li><strong>Standardization:</strong> Ensuring vehicle and guide quality aligns with partner expectations.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -73,25 +115,66 @@
     <div class="section-label">02. B2B Terms & Conditions</div>
     <div class="legal-container">
         <section class="legal-grid">
-            <div class="term-item"><h4>01. Booking Confirmation</h4><p>Service confirmation is subject to advance payment and issuance of TTA Group digital vouchers.</p></div>
-            <div class="term-item"><h4>02. Pricing & Currency</h4><p>All rates are Nett B2B and quoted in USD or Local Currency. Rates are subject to change in case of tax revisions.</p></div>
-            <div class="term-item"><h4>03. Cancellation Policy</h4><p>30-60 days: 100% Refund. 15-30 days: 50% Refund. Less than 15 days or No-Show: 100% Cancellation charges apply.</p></div>
-            <div class="term-item"><h4>04. Hotel Occupancy</h4><p>Standard check-in 14:00. Check-out 12:00. Early/late check-out requests are subject to hotel availability.</p></div>
-            <div class="term-item"><h4>05. Ground Transportation</h4><p>Vehicles provided for point-to-point transfers and listed sightseeing. Additional hours are payable directly.</p></div>
-            <div class="term-item"><h4>06. Health & Insurance</h4><p>Guests must have valid medical and travel insurance. TTA Group is not liable for medical emergencies.</p></div>
-            <div class="term-item"><h4>07. Itinerary Variations</h4><p>Operations reserve the right to alter routes due to weather or security alerts.</p></div>
-            <div class="term-item"><h4>08. Force Majeure</h4><p>TTA Group Adventure Agency is not liable for disruptions caused by acts of God, strikes, pandemics, or civil unrest.</p></div>
-            <div class="term-item"><h4>09. No-Show & Vouchers</h4><p>Vouchers must be presented at all service points. No-show at pickup will result in service forfeiture.</p></div>
-            <div class="term-item"><h4>10. Child & Senior Policy</h4><p>Child rates apply for ages 2-11. Infants under 2 are free for most ground services.</p></div>
-            <div class="term-item"><h4>11. Specific Requirements</h4><p>Dietary needs or physical assistance requests must be shared 7 days prior to arrival.</p></div>
-            <div class="term-item"><h4>12. Snowfall & 4x4 Policy</h4><p>In snowy regions, 4x4 vehicle upgrades required due to weather are at the client's expense.</p></div>
-            <div class="term-item"><h4>13. Documentation</h4><p>Visa and passport validity are the responsibility of the traveler.</p></div>
-            <div class="term-item"><h4>14. Conduct & Ethics</h4><p>Services will be terminated if travelers engage in illegal or abusive behavior.</p></div>
-            <div class="term-item"><h4>15. Dispute Resolution</h4><p>All legal disputes are subject to the jurisdiction of TTA Group registered headquarters.</p></div>
+            <div class="term-item"><h4>01. Booking</h4><p>Confirmed upon payment and TTA Group voucher issuance.</p></div>
+            <div class="term-item"><h4>02. Pricing</h4><p>Nett B2B rates. Subject to change only in case of tax revision.</p></div>
+            <div class="term-item"><h4>03. Cancellations</h4><p>30-60 Days: 100% Refund. 15-30 Days: 50%. <15 Days: No Refund.</p></div>
+            <div class="term-item"><h4>05. Transport</h4><p>Vehicles provided for point-to-point and listed sights only.</p></div>
+            <div class="term-item"><h4>08. Force Majeure</h4><p>Not liable for disruptions caused by acts of God or civil unrest.</p></div>
+            <div class="term-item"><h4>12. Snowfall Clause</h4><p>4x4 vehicle upgrades due to weather are at guest expense.</p></div>
+            <div class="term-item"><h4>15. Jurisdiction</h4><p>All disputes subject to TTA Group registered headquarters.</p></div>
         </section>
     </div>
 
-    <footer>© 2026 TTA Group Adventure Agency | DMC & GROUND HANDLING SPECIALISTS</footer>
+    <div class="section-label">03. B2B Global Connect</div>
+    <section class="form-sec" id="contact">
+        <div class="form-container">
+            <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;">PARTNER WITH US.</h2>
+            <p style="color: var(--dim); margin-bottom: 50px;">Register your agency to receive our confidential ground tariffs.</p>
+            
+            <form action="https://formspree.io/f/xbdlnwyw" method="POST">
+                <div class="form-grid">
+                    <div>
+                        <label>Agency Name</label>
+                        <input type="text" name="agency" placeholder="TTA Group Adventure Agency" required>
+                    </div>
+                    <div>
+                        <label>Official Email</label>
+                        <input type="email" name="email" placeholder="contact@agency.com" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div>
+                        <label>Phone / WhatsApp</label>
+                        <input type="tel" name="phone" placeholder="+91 XXXX XXX XXX" required>
+                    </div>
+                    <div>
+                        <label>Region of Interest</label>
+                        <select name="region">
+                            <option>Caucasus & Central Asia</option>
+                            <option>Southeast Asia</option>
+                            <option>East Asia</option>
+                            <option>Africa & Islands</option>
+                            <option>Europe & Middle East</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="text-align:left;">
+                    <label>Requirements</label>
+                    <textarea name="message" rows="3" placeholder="Specify group size or dates..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Register as Partner</button>
+            </form>
+
+            <div style="margin-top: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <p style="font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;"><i class="fas fa-envelope" style="color:var(--accent)"></i> SALESINDIA@TTAGROUPS.NET</p>
+                <p style="font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;"><i class="fas fa-envelope-open" style="color:var(--accent)"></i> SWAPNIL@TTAGROUP.NET</p>
+                <p style="font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;"><i class="fas fa-phone" style="color:var(--accent)"></i> +91 90282 27102</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 TTA Group Adventure Agency | Ground Handling & Destination Management Specialists</footer>
+
     <a href="https://wa.me/919028227102" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
@@ -106,13 +189,11 @@
         const container = document.getElementById('destination-sections');
         
         regions.forEach(region => {
-            // 1. Create the label
             const label = document.createElement('div');
             label.className = 'section-label';
             label.innerText = region.title;
             container.appendChild(label);
 
-            // 2. Create the grid
             const grid = document.createElement('div');
             grid.className = 'grid';
 
@@ -121,16 +202,12 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.onclick = () => { location.href = `destination.html?id=${encodeURIComponent(searchID)}`; };
-                
                 card.innerHTML = `
-                    <img src="images/${searchID.replace(/\s+/g, '')}.jpg" onerror="this.src='https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800'">
-                    <div class="card-info">
-                        <h3>${d}</h3>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800" onerror="this.src='images/${searchID.replace(/\s+/g, '')}.jpg'">
+                    <div class="card-info"><h3>${d}</h3></div>
                 `;
                 grid.appendChild(card);
             });
-            
             container.appendChild(grid);
         });
     </script>
