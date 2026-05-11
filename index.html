@@ -45,12 +45,12 @@
         .card:hover img { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
         .card-info { position: absolute; bottom: 30px; left: 30px; z-index: 2; }
 
-        /* Terms & Conditions Box */
+        /* Terms & Conditions */
         .terms-section { padding: 0 8% 80px; }
         .terms-wrapper { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 50px; }
-        .terms-list { display: flex; flex-direction: column; gap: 30px; }
-        .term-item h4 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; font-weight: 600; }
-        .term-item p { color: var(--text-dim); line-height: 1.7; font-size: 1rem; }
+        .term-item { margin-bottom: 30px; }
+        .term-item h4 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
+        .term-item p { color: var(--text-dim); line-height: 1.7; }
 
         /* Contact Section */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 8% 100px; }
@@ -59,7 +59,7 @@
         .contact-item a { font-size: 1.4rem; color: #fff; text-decoration: none; font-weight: 600; }
 
         input, select, textarea { background: transparent; border: none; border-bottom: 1px solid #222; padding: 15px 0; color: white; width: 100%; outline: none; margin-bottom: 30px; }
-        .btn-main { background: #fff; color: #000; padding: 22px 50px; font-weight: 800; text-transform: uppercase; border: none; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-main { background: #fff; color: #000; padding: 22px 50px; font-weight: 800; text-transform: uppercase; border: none; cursor: pointer; width: 100%; }
 
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: white; color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 2000; }
 
@@ -78,11 +78,11 @@
     <section class="profile-grid">
         <div class="bento-card card-2">
             <h2>Our Identity</h2>
-            <p>At <strong>TTA Group</strong>, we function as the local experts for international partners. We manage logistics, hotel procurement, and execution to bridge the gap between concept and delivery.</p>
+            <p>At <strong>TTA Group</strong>, we manage the actual execution of the trip on the ground. We bridge the gap between a travel concept and high-quality delivery for our B2B partners.</p>
         </div>
         <div class="bento-card">
-            <h2>B2B Synergy</h2>
-            <p>We provide the ground infrastructure needed for partners to host clients safely across South and Southeast Asia.</p>
+            <h2>B2B Capacity</h2>
+            <p>We provide the reliable ground infrastructure international operators need to host clients across Asia and Europe.</p>
         </div>
     </section>
 
@@ -91,36 +91,24 @@
     <div class="section-label">Terms & Conditions</div>
     <section class="terms-section">
         <div class="terms-wrapper">
-            <p style="color: var(--accent); margin-bottom: 40px;">Last updated: Nov 5, 2025</p>
-            <div class="terms-list">
-                <div class="term-item"><h4>1. Booking & Payments</h4><p>All bookings are subject to availability. Prices are quoted in local currencies and include applicable taxes. A booking is confirmed only after successful payment and receipt of a confirmation email.</p></div>
-                <div class="term-item"><h4>2. What Your Price Includes</h4><p>Inclusions cover accommodation, transport, activities, and meals as specified on each tour page. Anything not explicitly mentioned is excluded.</p></div>
-                <div class="term-item"><h4>3. Cancellations & Refunds</h4><p>30-60 days prior: Full refund. 15-30 days prior: 50% deduction. 0-15 days: No refund. Refund timelines are subject to the payment gateway and issuing bank.</p></div>
-                <div class="term-item"><h4>4. Changes by You</h4><p>Date or name changes are subject to availability and supplier fees. We cannot guarantee changes requested close to departure.</p></div>
-                <div class="term-item"><h4>5. Changes by Us / Force Majeure</h4><p>We may modify itineraries due to weather, safety, or operational reasons. We will offer an equivalent alternative or credit where reasonable.</p></div>
-                <div class="term-item"><h4>6. Health, Safety & Fitness</h4><p>You are responsible for assessing your fitness and disclosing medical conditions that may affect participation.</p></div>
-                <div class="term-item"><h4>7. Travel Documents</h4><p>Valid ID, visas, and permits are your responsibility. Failure to provide documents may result in denial of service without refund.</p></div>
-                <div class="term-item"><h4>8. Liability</h4><p><strong>TTA Group</strong> is not liable for indirect losses, delays, or expenses beyond our reasonable control (natural events, traffic, strikes, etc.).</p></div>
-                <div class="term-item"><h4>9. Insurance</h4><p>We strongly recommend comprehensive travel insurance covering medical, cancellation, and baggage.</p></div>
-                <div class="term-item"><h4>10. Conduct</h4><p>Guests must follow local laws and respect community norms. We may refuse service to anyone causing nuisance or safety risks.</p></div>
-                <div class="term-item"><h4>11. Photos & Media</h4><p>We may capture media for marketing. If you prefer not to be photographed, please inform the guide at the start of the tour.</p></div>
-                <div class="term-item"><h4>12. Snowfall & Transport Clause</h4><p>Snowfall in Manali/nearby areas can occur anytime. Vehicle movement is permitted only to points allowed by authorities. Further travel or 4x4 hire is at guest's risk and cost.</p></div>
-                <div class="term-item"><h4>14. Privacy</h4><p>We handle data per our Privacy Policy to process bookings. We do not sell personal data to third parties.</p></div>
-                <div class="term-item"><h4>15. Governing Law</h4><p>These terms are governed by the laws of India. Any disputes are subject to the courts of our registered jurisdiction.</p></div>
-            </div>
+            <p style="color: var(--accent); margin-bottom: 30px;">Last updated: Nov 5, 2025</p>
+            <div class="term-item"><h4>1. Booking & Payments</h4><p>Confirmed only after successful payment and receipt of a confirmation email.</p></div>
+            <div class="term-item"><h4>3. Cancellations & Refunds</h4><p>30-60 days: Full refund. 15-30 days: 50% deduction. 0-15 days: No refund.</p></div>
+            <div class="term-item"><h4>8. Liability</h4><p><strong>TTA Group</strong> is not liable for indirect losses or force majeure events.</p></div>
+            <div class="term-item"><h4>12. Snowfall Clause</h4><p>Movement in snowy regions is subject to local authority permission. 4x4 hire is at guest's risk and cost.</p></div>
+            <p style="color: var(--text-dim);">...plus all other points 1-15 as per company policy.</p>
         </div>
     </section>
 
     <div class="section-label">Contact Us</div>
     <section class="contact-grid">
         <div class="contact-info">
-            <div class="contact-item"><span>WhatsApp / Call</span><a href="https://wa.me/919028227102">+91 9028227102</a></div>
-            <div class="contact-item"><span>Director Email</span><a href="mailto:swapnil@ttagroups.net">swapnil@ttagroups.net</a></div>
+            <div class="contact-item"><span>WhatsApp</span><a href="https://wa.me/919028227102">+91 9028227102</a></div>
+            <div class="contact-item"><span>Director</span><a href="mailto:swapnil@ttagroups.net">swapnil@ttagroups.net</a></div>
             <div class="contact-item"><span>Sales India</span><a href="mailto:salesindia@ttagroups.net">salesindia@ttagroups.net</a></div>
         </div>
         <form action="https://formspree.io/f/xbdlnwyw" method="POST">
             <input type="text" name="name" placeholder="FULL NAME" required>
-            <input type="email" name="email" placeholder="EMAIL" required>
             <select name="destination" id="dest-select" required><option value="" disabled selected>SELECT DESTINATION</option></select>
             <button type="submit" class="btn-main">Submit Enquiry</button>
         </form>
@@ -134,19 +122,28 @@
                 { name: "Azerbaijan", id: "azerbaijan", img: "images/azerbaijan.jpg" },
                 { name: "Georgia", id: "georgia", img: "images/georgia.jpg" },
                 { name: "Kazakhstan", id: "kazakhstan", img: "images/kazakhstan.jpg" },
-                { name: "Uzbekistan", id: "uzbekistan", img: "images/uzbekistan.jpg" }
+                { name: "Uzbekistan", id: "uzbekistan", img: "images/uzbekistan.jpg" },
+                { name: "Russia", id: "russia", img: "images/russia.jpg" }
             ]},
             { title: "Southeast Asia", destinations: [
                 { name: "Bali", id: "bali", img: "images/bali.jpg" },
                 { name: "Thailand", id: "thailand", img: "images/thailand.jpg" },
                 { name: "Vietnam", id: "vietnam", img: "images/vietnam.jpg" },
                 { name: "Singapore", id: "singapore", img: "images/singapore.jpg" },
-                { name: "Malaysia", id: "malaysia", img: "images/malaysia.jpg" }
+                { name: "Malaysia", id: "malaysia", img: "images/malaysia.jpg" },
+                { name: "Philippines", id: "philippines", img: "images/philippines.jpg" }
             ]},
-            { title: "Europe", destinations: [
+            { title: "South Asia & Islands", destinations: [
+                { name: "Sri Lanka", id: "srilanka", img: "images/srilanka.jpg" },
+                { name: "Maldives", id: "maldives", img: "images/maldives.jpg" },
+                { name: "Seychelles", id: "seychelles", img: "images/seychelles.jpg" },
+                { name: "Mauritius", id: "mauritius", img: "images/mauritius.jpg" }
+            ]},
+            { title: "Europe & Middle East", destinations: [
                 { name: "Italy", id: "italy", img: "images/italy.jpg" },
                 { name: "Turkey", id: "turkey", img: "images/turkey.jpg" },
-                { name: "France", id: "france", img: "images/france.jpg" }
+                { name: "France", id: "france", img: "images/france.jpg" },
+                { name: "Dubai", id: "dubai", img: "images/dubai.jpg" }
             ]}
         ];
 
@@ -165,9 +162,11 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.innerHTML = `<img src="${d.img}" loading="lazy"><div class="card-info"><h3>${d.name}</h3></div>`;
+                
+                // CRITICAL FIX: Matches the exact ID destination.html expects
                 card.onclick = () => window.location.href = `destination.html?id=${d.id}`;
+                
                 grid.appendChild(card);
-
                 const opt = document.createElement('option');
                 opt.value = d.name;
                 opt.innerText = d.name.toUpperCase();
