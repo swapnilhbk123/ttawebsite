@@ -38,7 +38,7 @@
         .term-item h4 { color: var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
         .term-item p { color: var(--dim); font-size: 0.85rem; line-height: 1.7; }
         
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #fff; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; transition: 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #fff; color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; transition: 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.6); text-decoration: none; }
         footer { padding: 60px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--dim); font-size: 0.8rem; }
         
         @media (max-width: 900px) { .profile-sec { grid-template-columns: 1fr; } .profile-text h2 { font-size: 2.5rem; } }
@@ -46,9 +46,10 @@
 </head>
 <body>
     <nav><a href="#" class="logo">TTA GROUP</a></nav>
+    
     <section class="hero">
         <span>B2B Ground Handling & DMC</span>
-        <h1>BEYOND<br>BOUNDARIES.</h1>
+        <h1>GLOBAL<br>RELIABILITY.</h1>
     </section>
 
     <section class="profile-sec">
@@ -78,20 +79,20 @@
             <div class="term-item"><h4>04. Hotel Occupancy</h4><p>Standard check-in 14:00. Check-out 12:00. Early/late check-out requests are subject to hotel availability.</p></div>
             <div class="term-item"><h4>05. Ground Transportation</h4><p>Vehicles provided for point-to-point transfers and listed sightseeing. Additional hours are payable directly.</p></div>
             <div class="term-item"><h4>06. Health & Insurance</h4><p>Guests must have valid medical and travel insurance. TTA Group is not liable for medical emergencies.</p></div>
-            <div class="term-item"><h4>07. Itinerary Variations</h4><p>Operations reserve the right to alter routes due to weather or security alerts. TTA Group is not liable for missed sightseeing.</p></div>
+            <div class="term-item"><h4>07. Itinerary Variations</h4><p>Operations reserve the right to alter routes due to weather or security alerts.</p></div>
             <div class="term-item"><h4>08. Force Majeure</h4><p>TTA Group is not liable for disruptions caused by acts of God, strikes, pandemics, or civil unrest.</p></div>
             <div class="term-item"><h4>09. No-Show & Vouchers</h4><p>Vouchers must be presented at all service points. No-show at pickup will result in service forfeiture.</p></div>
             <div class="term-item"><h4>10. Child & Senior Policy</h4><p>Child rates apply for ages 2-11. Infants under 2 are free for most ground services.</p></div>
             <div class="term-item"><h4>11. Specific Requirements</h4><p>Dietary needs or physical assistance requests must be shared 7 days prior to arrival.</p></div>
             <div class="term-item"><h4>12. Snowfall & 4x4 Policy</h4><p>In snowy regions, 4x4 vehicle upgrades required due to weather are at the client's expense.</p></div>
-            <div class="term-item"><h4>13. Documentation</h4><p>Visa and passport validity are the responsibility of the traveler. TTA Group is not liable for entry refusals.</p></div>
-            <div class="term-item"><h4>14. Conduct & Ethics</h4><p>Services will be terminated if travelers engage in illegal or abusive behavior towards staff.</p></div>
+            <div class="term-item"><h4>13. Documentation</h4><p>Visa and passport validity are the responsibility of the traveler.</p></div>
+            <div class="term-item"><h4>14. Conduct & Ethics</h4><p>Services will be terminated if travelers engage in illegal or abusive behavior.</p></div>
             <div class="term-item"><h4>15. Dispute Resolution</h4><p>All legal disputes are subject to the jurisdiction of TTA Group registered headquarters.</p></div>
         </section>
     </div>
 
     <footer>© 2026 TTA GROUP | DMC & GROUND HANDLING SPECIALISTS</footer>
-    <a href="https://wa.me/919028227102" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/919028227102" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
         const regions = [
@@ -101,16 +102,35 @@
             { title: "Islands & Africa", destinations: ["Seychelles", "Maldives", "Sri Lanka", "Mauritius", "Egypt", "Kenya"] },
             { title: "Europe & ME", destinations: ["Turkey", "Italy", "France", "Switzerland", "Netherlands", "Dubai"] }
         ];
+
         const container = document.getElementById('destination-sections');
+        
         regions.forEach(region => {
-            container.innerHTML += `<div class="section-label">${region.title}</div>`;
-            let grid = document.createElement('div'); grid.className = 'grid';
+            // 1. Create the label
+            const label = document.createElement('div');
+            label.className = 'section-label';
+            label.innerText = region.title;
+            container.appendChild(label);
+
+            // 2. Create the grid
+            const grid = document.createElement('div');
+            grid.className = 'grid';
+
             region.destinations.forEach(d => {
-                grid.innerHTML += `<div class="card" onclick="location.href='destination.html?id=${encodeURIComponent(d.toLowerCase())}'">
-                    <img src="images/${d.toLowerCase().replace(/\s+/g, '')}.jpg" onerror="this.src='https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800'">
-                    <div class="card-info"><h3>${d}</h3></div>
-                </div>`;
+                const searchID = d.toLowerCase();
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => { location.href = `destination.html?id=${encodeURIComponent(searchID)}`; };
+                
+                card.innerHTML = `
+                    <img src="images/${searchID.replace(/\s+/g, '')}.jpg" onerror="this.src='https://images.unsplash.com/photo-1500835595353-b0ad2e58b9d0?auto=format&fit=crop&w=800'">
+                    <div class="card-info">
+                        <h3>${d}</h3>
+                    </div>
+                `;
+                grid.appendChild(card);
             });
+            
             container.appendChild(grid);
         });
     </script>
