@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>TTA Group Adventure Agency | Global Travel DMC</title>
     
-    <meta name="description" content="TTA Group Adventure Agency - Registered Travel DMC. Operations in 40+ countries. Local experts for South and Southeast Asia.">
-    <meta property="og:title" content="TTA Group Adventure Agency | Travel The World">
-    <meta property="og:url" content="https://ttagroups.net/">
-
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -30,16 +26,14 @@
         nav { padding: 30px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
         .logo { font-weight: 800; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; }
 
-        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; }
+        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; }
         .hero h1 { font-size: clamp(3rem, 10vw, 7rem); font-weight: 800; line-height: 0.9; letter-spacing: -4px; margin-bottom: 30px; text-transform: uppercase; }
-        .hero p { color: var(--text-dim); font-size: 1.2rem; max-width: 700px; }
 
         .section-label { padding: 80px 8% 40px; font-size: 0.7rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 800; }
 
-        /* Bento Profile Grid */
+        /* Profile Grid */
         .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 8% 50px; }
         .bento-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 40px; transition: var(--transition); }
-        .card-full { grid-column: span 3; }
         .card-2 { grid-column: span 2; }
         .bento-card h2 { font-size: 0.7rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
         .bento-card p { font-size: 1.1rem; line-height: 1.6; color: var(--text-dim); }
@@ -51,30 +45,23 @@
         .card:hover img { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
         .card-info { position: absolute; bottom: 30px; left: 30px; z-index: 2; }
 
-        /* Terms Section */
-        .terms-container { padding: 0 8% 80px; }
-        .terms-content { background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border); padding: 40px; max-height: 500px; overflow-y: auto; }
-        .terms-content h4 { margin: 25px 0 10px; color: #fff; font-size: 1.1rem; }
-        .terms-content p { color: var(--text-dim); line-height: 1.6; font-size: 0.95rem; margin-bottom: 15px; }
+        /* Terms & Contact Sections */
+        .full-text-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 50px; margin: 0 8% 40px; }
+        .full-text-box h3 { margin: 30px 0 10px; color: #fff; font-size: 1.2rem; }
+        .full-text-box p { color: var(--text-dim); line-height: 1.7; margin-bottom: 15px; }
 
-        /* Contact Section */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 8% 100px; }
-        .contact-info-box { display: flex; flex-direction: column; gap: 30px; }
-        .contact-item { border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .contact-item { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 25px; }
         .contact-item span { display: block; font-size: 0.7rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
         .contact-item a, .contact-item p { font-size: 1.4rem; color: #fff; text-decoration: none; font-weight: 600; }
 
-        /* Form */
         input, select, textarea { background: transparent; border: none; border-bottom: 1px solid #222; padding: 15px 0; color: white; width: 100%; outline: none; margin-bottom: 30px; }
-        .btn-main { background: #fff; color: #000; padding: 22px 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; border: none; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-main { background: #fff; color: #000; padding: 22px 50px; font-weight: 800; text-transform: uppercase; border: none; cursor: pointer; transition: 0.3s; width: 100%; }
         .btn-main:hover { background: var(--accent); color: #fff; }
 
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: white; color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 2000; }
 
-        @media (max-width: 900px) {
-            .profile-grid, .contact-grid { grid-template-columns: 1fr; }
-            .card-full, .card-2 { grid-column: span 1; }
-        }
+        @media (max-width: 900px) { .profile-grid, .contact-grid { grid-template-columns: 1fr; } .card-2 { grid-column: span 1; } }
     </style>
 </head>
 <body>
@@ -82,19 +69,18 @@
     <nav><div class="logo">TTA Group <span>Adventure Agency</span></div></nav>
 
     <section class="hero">
-        <h2 style="font-size: 0.7rem; letter-spacing: 5px; color: var(--accent); margin-bottom: 20px;">DMC & TRAVEL CONSULTANCY</h2>
         <h1>EXCELLENCE <br> ON THE GROUND.</h1>
     </section>
 
-    <div class="section-label">Business Profile</div>
+    <div class="section-label">DMC Profile</div>
     <section class="profile-grid">
         <div class="bento-card card-2">
             <h2>The DMC Identity</h2>
-            <p>At <strong>TTA Group Adventure Agency</strong>, we act as the local office for international travel partners. While travel agents focus on individual components, we manage the actual execution of the trip on the ground. We bridge the gap between a general travel concept and a predictable, high-quality schedule.</p>
+            <p>At <strong>TTA Group</strong>, we act as the local office for international travel partners. While travel agents focus on individual components, we manage the actual execution of the trip on the ground, coordinating logistics, procurement, and safety.</p>
         </div>
         <div class="bento-card">
-            <h2>B2B Capacity</h2>
-            <p>We primarily work in a B2B capacity. International tour operators partner with us for a reliable local entity to oversee their clients’ safety and comfort.</p>
+            <h2>B2B Synergy</h2>
+            <p>We provide the reliable ground infrastructure international operators need to ensure their clients' comfort across South and Southeast Asia.</p>
         </div>
     </section>
 
@@ -102,102 +88,86 @@
     <div id="destination-sections"></div>
 
     <div class="section-label">Terms & Conditions</div>
-    <section class="terms-container">
-        <div class="terms-content">
-            <p><em>Last updated: Nov 5, 2025</em></p>
-            <h4>1. Booking & Payments</h4>
-            <p>All bookings are subject to availability. Prices are quoted in local currencies of the destinations and include applicable taxes unless stated otherwise. A booking is confirmed only after successful payment and receipt of a confirmation email.</p>
-            <h4>2. What Your Price Includes</h4>
-            <p>Inclusions are listed on each tour page and may cover accommodation, transport, activities, and meals as specified. Anything not explicitly mentioned as included is considered excluded.</p>
-            <h4>3. Cancellations & Refunds</h4>
-            <p>Cancel the booking between 30 to 60 days prior to date of journey, and receive full refund. Between 15 to 30 days, 50% amount of the total tour cost will be deducted. Between 0 to 15 days, no refunds would be issued.</p>
-            <h4>4. Changes by You</h4>
-            <p>Date or name changes are subject to availability and any fare differences or supplier fees. We’ll do our best to help but can’t guarantee changes close to departure.</p>
-            <h4>5. Changes by Us / Force Majeure</h4>
-            <p>We may modify itineraries due to weather, safety, government advisories, or operational reasons. In such cases, we will offer an equivalent alternative or credit where reasonable.</p>
-            <h4>12. Snowfall & Transport Clause</h4>
-            <p>Snowfall in Manali and nearby areas can occur at any time. In such situations, vehicle movement will be permitted only up to the point accessible and allowed by local authorities. If any guest wishes to proceed further, the same can be done at their own risk and cost by hiring a 4x4 vehicle locally.</p>
-            <h4>14. Privacy</h4>
-            <p>We handle your data per our Privacy Policy and use it to process bookings and provide service. We do not sell personal data to third parties.</p>
-        </div>
+    <section class="full-text-box">
+        <p><em>Last updated: Nov 5, 2025</em></p>
+        <h3>1. Booking & Payments</h3>
+        <p>All bookings are subject to availability. Prices include applicable taxes unless stated otherwise. A booking is confirmed only after successful payment and receipt of a confirmation email.</p>
+        <h3>3. Cancellations & Refunds</h3>
+        <p>Cancel 30-60 days prior: Full refund. 15-30 days prior: 50% deduction. 0-15 days prior: No refund. Refund timelines are subject to bank processing.</p>
+        <h3>8. Liability</h3>
+        <p>While we take utmost care, <strong>TTA Group</strong> is not liable for indirect losses, delays, or expenses beyond our reasonable control (natural events, traffic, strikes, etc.).</p>
+        <h3>12. Snowfall & Transport Clause</h3>
+        <p>Snowfall in Manali and nearby areas can occur at any time. Vehicle movement will be permitted only up to the point allowed by local authorities. Further travel or 4x4 hire is at the guest's own risk and cost.</p>
+        <h3>15. Governing Law</h3>
+        <p>These terms are governed by the laws of India. Any disputes shall be subject to the courts of our registered jurisdiction.</p>
     </section>
 
     <div class="section-label">Contact Us</div>
     <section class="contact-grid" id="contact">
-        <div class="contact-info-box">
-            <div class="contact-item">
-                <span>Direct Line / WhatsApp</span>
-                <a href="https://wa.me/919028227102">+91 9028227102</a>
-            </div>
-            <div class="contact-item">
-                <span>Partnership Enquiries</span>
-                <a href="mailto:swapnil@ttagroups.net">swapnil@ttagroups.net</a>
-            </div>
-            <div class="contact-item">
-                <span>Sales India</span>
-                <a href="mailto:salesindia@ttagroups.net">salesindia@ttagroups.net</a>
-            </div>
+        <div class="contact-info">
+            <div class="contact-item"><span>WhatsApp & Call</span><a href="https://wa.me/919028227102">+91 9028227102</a></div>
+            <div class="contact-item"><span>Director Email</span><a href="mailto:swapnil@ttagroups.net">swapnil@ttagroups.net</a></div>
+            <div class="contact-item"><span>Sales India</span><a href="mailto:salesindia@ttagroups.net">salesindia@ttagroups.net</a></div>
         </div>
-
-        <div class="booking-form-container">
-            <form action="https://formspree.io/f/xbdlnwyw" method="POST" id="tta-form">
-                <input type="text" name="name" placeholder="FULL NAME" required>
-                <input type="email" name="email" placeholder="EMAIL" required>
-                <select name="destination" id="dest-select" required>
-                    <option value="" disabled selected>SELECT DESTINATION</option>
-                </select>
-                <textarea name="message" rows="3" placeholder="SPECIFIC REQUIREMENTS"></textarea>
-                <button type="submit" id="submit-btn" class="btn-main">Submit Enquiry</button>
-            </form>
-            <div id="success-msg" style="display:none; font-size: 1.5rem; color: var(--accent); margin-top: 20px;">Thank you. We will be in touch.</div>
-        </div>
+        <form action="https://formspree.io/f/xbdlnwyw" method="POST">
+            <input type="text" name="name" placeholder="FULL NAME" required>
+            <input type="email" name="email" placeholder="EMAIL" required>
+            <select name="destination" id="dest-select" required>
+                <option value="" disabled selected>SELECT DESTINATION</option>
+            </select>
+            <button type="submit" class="btn-main">Submit Enquiry</button>
+        </form>
     </section>
 
     <a href="https://wa.me/919028227102" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
         const regions = [
-            { title: "Caucasus & Central Asia", destinations: [{ name: "Azerbaijan", img: "images/azerbaijan.jpg" }, { name: "Georgia", img: "images/georgia.jpg" }, { name: "Kazakhstan", img: "images/kazakhstan.jpg" }, { name: "Uzbekistan", img: "images/uzbekistan.jpg" }] },
-            { title: "Europe", destinations: [{ name: "Italy", img: "images/italy.jpg" }, { name: "Turkey", img: "images/turkey.jpg" }, { name: "France", img: "images/france.jpg" }] },
-            { title: "Southeast Asia", destinations: [{ name: "Bali", img: "images/bali.jpg" }, { name: "Thailand", img: "images/thailand.jpg" }, { name: "Vietnam", img: "images/vietnam.jpg" }, { name: "Singapore", img: "images/singapore.jpg" }, { name: "Malaysia", img: "images/malaysia.jpg" }] }
+            { title: "Caucasus & Central Asia", destinations: [
+                { name: "Azerbaijan", id: "azerbaijan", img: "images/azerbaijan.jpg" },
+                { name: "Georgia", id: "georgia", img: "images/georgia.jpg" },
+                { name: "Kazakhstan", id: "kazakhstan", img: "images/kazakhstan.jpg" },
+                { name: "Uzbekistan", id: "uzbekistan", img: "images/uzbekistan.jpg" }
+            ]},
+            { title: "Southeast Asia", destinations: [
+                { name: "Bali", id: "bali", img: "images/bali.jpg" },
+                { name: "Thailand", id: "thailand", img: "images/thailand.jpg" },
+                { name: "Vietnam", id: "vietnam", img: "images/vietnam.jpg" },
+                { name: "Singapore", id: "singapore", img: "images/singapore.jpg" },
+                { name: "Malaysia", id: "malaysia", img: "images/malaysia.jpg" }
+            ]},
+            { title: "Europe", destinations: [
+                { name: "Italy", id: "italy", img: "images/italy.jpg" },
+                { name: "Turkey", id: "turkey", img: "images/turkey.jpg" },
+                { name: "France", id: "france", img: "images/france.jpg" }
+            ]}
         ];
 
-        const sectionContainer = document.getElementById('destination-sections');
+        const container = document.getElementById('destination-sections');
         const select = document.getElementById('dest-select');
 
         regions.forEach(region => {
-            const header = document.createElement('div');
-            header.className = 'section-label';
-            header.innerHTML = region.title;
-            sectionContainer.appendChild(header);
+            const label = document.createElement('div');
+            label.className = 'section-label';
+            label.innerHTML = region.title;
+            container.appendChild(label);
 
             const grid = document.createElement('div');
             grid.className = 'grid';
-            region.destinations.forEach(dest => {
+            region.destinations.forEach(d => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.innerHTML = `<img src="${dest.img}" loading="lazy"><div class="card-info"><h3>${dest.name.toUpperCase()}</h3></div>`;
-                card.onclick = () => window.location.href = `destination.html?id=${dest.name.toLowerCase().replace(/\s/g, '')}`;
+                card.innerHTML = `<img src="${d.img}" loading="lazy"><div class="card-info"><h3>${d.name}</h3></div>`;
+                card.onclick = () => window.location.href = `destination.html?id=${d.id}`;
                 grid.appendChild(card);
 
                 const opt = document.createElement('option');
-                opt.value = dest.name;
-                opt.innerText = dest.name.toUpperCase();
+                opt.value = d.name;
+                opt.innerText = d.name.toUpperCase();
                 select.appendChild(opt);
             });
-            sectionContainer.appendChild(grid);
+            container.appendChild(grid);
         });
-
-        document.getElementById("tta-form").onsubmit = async (e) => {
-            e.preventDefault();
-            const btn = document.getElementById("submit-btn");
-            btn.innerText = "SENDING...";
-            const response = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
-            if (response.ok) {
-                e.target.style.display = "none";
-                document.getElementById("success-msg").style.display = "block";
-            }
-        };
     </script>
 </body>
 </html>
