@@ -95,7 +95,7 @@
         const container = document.getElementById('container');
 
         if(id) {
-            const cleanId = decodeURIComponent(id).toLowerCase().trim();
+            const cleanId = decodeURIComponent(id).toLowerCase().replace(/\s+/g, '');
             document.getElementById('title').innerText = cleanId.toUpperCase();
             document.getElementById('subject').value = "B2B INQUIRY: " + cleanId.toUpperCase();
             
